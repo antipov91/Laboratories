@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb860b8a549c1844aa5184fb9c7db5d1, type: 3}
+  m_Name: GenesisSettings
+  m_EditorClassIdentifier: 
+  _keyValuePairs: []
+  _genesisCLIInstallationFolder: 
+  _genesisConfig:
+    keyValuePairs:
+    - key: Genesis.SearchPaths
+      value: 
+    - key: Genesis.Plugins
+      value: 
+    - key: Genesis.PreProcessors
+      value: 
+    - key: Genesis.DataProviders
+      value: 
+    - key: Genesis.CodeGenerators
+      value: 
+    - key: Genesis.PostProcessors
+      value: 
+    - key: Genesis.AllPreProcessors
+      value: 
+    - key: Genesis.AllDataProviders
+      value: 
+    - key: Genesis.AllCodeGenerators
+      value: 
+    - key: Genesis.AllPostProcessors
+      value: 
+    - key: Genesis.DoUseWhiteListedAssemblies
+      value: false
+    - key: Genesis.WhiteListedAssemblies
+      value: Assembly-CSharp, Assembly-CSharp-Editor
+    - key: Genesis.LineEndings
+      value: Unix
+    - key: Genesis.TargetDirectory
+      value: Assets/Generated
+    - key: EntitasRedux.CodeGeneration.Plugins.Contexts
+      value: Game, Input
+    - key: EntitasRedux.VisualDebugging.DefaultInstanceCreatorFolderPath
+      value: Assets/Editor/DefaultInstanceCreator
+    - key: EntitasRedux.VisualDebugging.TypeDrawerFolderPath
+      value: Assets/Editor/TypeDrawer
+    name: DefaultGenesisConfig

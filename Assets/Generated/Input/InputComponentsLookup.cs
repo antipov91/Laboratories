@@ -14,16 +14,18 @@ using JCMG.EntitasRedux;
 public static class InputComponentsLookup
 {
 	public const int MoveStix = 0;
-	public const int Cursor = 1;
-	public const int Manager = 2;
-	public const int Return = 3;
-	public const int RightStix = 4;
+	public const int Action = 1;
+	public const int Cursor = 2;
+	public const int Manager = 3;
+	public const int Return = 4;
+	public const int RightStix = 5;
 
-	public const int TotalComponents = 5;
+	public const int TotalComponents = 6;
 
 	public static readonly string[] ComponentNames =
 	{
 		"MoveStix",
+		"Action",
 		"Cursor",
 		"Manager",
 		"Return",
@@ -33,6 +35,7 @@ public static class InputComponentsLookup
 	public static readonly System.Type[] ComponentTypes =
 	{
 		typeof(Assets.Scripts.Components.Input.MoveStixComponent),
+		typeof(Laboratories.Components.Input.ActionComponent),
 		typeof(Laboratories.Components.Input.CursorComponent),
 		typeof(Laboratories.Components.Input.ManagerComponent),
 		typeof(Laboratories.Components.Input.ReturnComponent),
@@ -42,10 +45,11 @@ public static class InputComponentsLookup
 	public static readonly Dictionary<Type, int> ComponentTypeToIndex = new Dictionary<Type, int>
 	{
 		{ typeof(Assets.Scripts.Components.Input.MoveStixComponent), 0 },
-		{ typeof(Laboratories.Components.Input.CursorComponent), 1 },
-		{ typeof(Laboratories.Components.Input.ManagerComponent), 2 },
-		{ typeof(Laboratories.Components.Input.ReturnComponent), 3 },
-		{ typeof(Laboratories.Components.Input.RightStixComponent), 4 }
+		{ typeof(Laboratories.Components.Input.ActionComponent), 1 },
+		{ typeof(Laboratories.Components.Input.CursorComponent), 2 },
+		{ typeof(Laboratories.Components.Input.ManagerComponent), 3 },
+		{ typeof(Laboratories.Components.Input.ReturnComponent), 4 },
+		{ typeof(Laboratories.Components.Input.RightStixComponent), 5 }
 	};
 
 	/// <summary>

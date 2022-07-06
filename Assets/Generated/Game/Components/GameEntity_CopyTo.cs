@@ -18,25 +18,13 @@ public partial class GameEntity
 	public void CopyComponentTo(IComponent component)
 	{
 		#if !ENTITAS_REDUX_NO_IMPL
-		if (component is Laboratories.Components.Game.HighlightComponent Highlight)
+		if (component is Laboratories.Components.Game.PlacementsComponent Placements)
 		{
-			CopyHighlightTo(Highlight);
+			CopyPlacementsTo(Placements);
 		}
-		else if (component is Laboratories.Components.Game.CameraMovementFXComponent CameraMovementFX)
+		else if (component is Laboratories.Components.Game.DraggableObjectComponent DraggableObject)
 		{
-			CopyCameraMovementFXTo(CameraMovementFX);
-		}
-		else if (component is Laboratories.Components.Game.CameraComponent Camera)
-		{
-			CopyCameraTo(Camera);
-		}
-		else if (component is Laboratories.Components.Game.SpeedComponent Speed)
-		{
-			CopySpeedTo(Speed);
-		}
-		else if (component is Laboratories.Components.Game.PlayerComponent Player)
-		{
-			IsPlayer = true;
+			CopyDraggableObjectTo(DraggableObject);
 		}
 		else if (component is Laboratories.Components.Game.IdComponent Id)
 		{
@@ -46,17 +34,53 @@ public partial class GameEntity
 		{
 			CopyNameTo(Name);
 		}
+		else if (component is Laboratories.Components.Game.PlayerComponent Player)
+		{
+			IsPlayer = true;
+		}
+		else if (component is Laboratories.Components.Game.SpeedComponent Speed)
+		{
+			CopySpeedTo(Speed);
+		}
 		else if (component is Laboratories.Components.Game.TransformComponent Transform)
 		{
 			CopyTransformTo(Transform);
+		}
+		else if (component is Laboratories.Components.Game.HighlightComponent Highlight)
+		{
+			CopyHighlightTo(Highlight);
+		}
+		else if (component is Laboratories.Components.Game.ClickedComponent Clicked)
+		{
+			IsClicked = true;
+		}
+		else if (component is Laboratories.Components.Game.CameraMovementFXComponent CameraMovementFX)
+		{
+			CopyCameraMovementFXTo(CameraMovementFX);
+		}
+		else if (component is Laboratories.Components.Game.CameraComponent Camera)
+		{
+			CopyCameraTo(Camera);
 		}
 		else if (component is Laboratories.Components.Game.ViewComponent View)
 		{
 			CopyViewTo(View);
 		}
+		else if (component is Laboratories.Game.PickupedComponent Pickuped)
+		{
+			IsPickuped = true;
+		}
+		else if (component is Laboratories.Game.HandComponent Hand)
+		{
+			CopyHandTo(Hand);
+		}
 		else if (component is Laboratories.Game.CharacterControllerComponent CharacterController)
 		{
 			CopyCharacterControllerTo(CharacterController);
+		}
+		else if (component is Laboratories.Game.PossibleActionsComponent PossibleActions)
+		{
+			CopyPossibleActionsTo(PossibleActions);
 		}
 		else if (component is HighlightAddedListenerComponent HighlightAddedListener)
 		{

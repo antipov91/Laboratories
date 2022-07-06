@@ -16,30 +16,42 @@ public static class GameComponentsLookup
 	public const int HighlightAddedListener = 0;
 	public const int Camera = 1;
 	public const int CameraMovementFX = 2;
-	public const int Highlight = 3;
-	public const int Id = 4;
-	public const int Name = 5;
-	public const int Player = 6;
-	public const int Speed = 7;
-	public const int Transform = 8;
-	public const int View = 9;
-	public const int CharacterController = 10;
+	public const int Clicked = 3;
+	public const int DraggableObject = 4;
+	public const int Highlight = 5;
+	public const int Id = 6;
+	public const int Name = 7;
+	public const int Placements = 8;
+	public const int Player = 9;
+	public const int Speed = 10;
+	public const int Transform = 11;
+	public const int View = 12;
+	public const int CharacterController = 13;
+	public const int Hand = 14;
+	public const int Pickuped = 15;
+	public const int PossibleActions = 16;
 
-	public const int TotalComponents = 11;
+	public const int TotalComponents = 17;
 
 	public static readonly string[] ComponentNames =
 	{
 		"HighlightAddedListener",
 		"Camera",
 		"CameraMovementFX",
+		"Clicked",
+		"DraggableObject",
 		"Highlight",
 		"Id",
 		"Name",
+		"Placements",
 		"Player",
 		"Speed",
 		"Transform",
 		"View",
-		"CharacterController"
+		"CharacterController",
+		"Hand",
+		"Pickuped",
+		"PossibleActions"
 	};
 
 	public static readonly System.Type[] ComponentTypes =
@@ -47,14 +59,20 @@ public static class GameComponentsLookup
 		typeof(HighlightAddedListenerComponent),
 		typeof(Laboratories.Components.Game.CameraComponent),
 		typeof(Laboratories.Components.Game.CameraMovementFXComponent),
+		typeof(Laboratories.Components.Game.ClickedComponent),
+		typeof(Laboratories.Components.Game.DraggableObjectComponent),
 		typeof(Laboratories.Components.Game.HighlightComponent),
 		typeof(Laboratories.Components.Game.IdComponent),
 		typeof(Laboratories.Components.Game.NameComponent),
+		typeof(Laboratories.Components.Game.PlacementsComponent),
 		typeof(Laboratories.Components.Game.PlayerComponent),
 		typeof(Laboratories.Components.Game.SpeedComponent),
 		typeof(Laboratories.Components.Game.TransformComponent),
 		typeof(Laboratories.Components.Game.ViewComponent),
-		typeof(Laboratories.Game.CharacterControllerComponent)
+		typeof(Laboratories.Game.CharacterControllerComponent),
+		typeof(Laboratories.Game.HandComponent),
+		typeof(Laboratories.Game.PickupedComponent),
+		typeof(Laboratories.Game.PossibleActionsComponent)
 	};
 
 	public static readonly Dictionary<Type, int> ComponentTypeToIndex = new Dictionary<Type, int>
@@ -62,14 +80,20 @@ public static class GameComponentsLookup
 		{ typeof(HighlightAddedListenerComponent), 0 },
 		{ typeof(Laboratories.Components.Game.CameraComponent), 1 },
 		{ typeof(Laboratories.Components.Game.CameraMovementFXComponent), 2 },
-		{ typeof(Laboratories.Components.Game.HighlightComponent), 3 },
-		{ typeof(Laboratories.Components.Game.IdComponent), 4 },
-		{ typeof(Laboratories.Components.Game.NameComponent), 5 },
-		{ typeof(Laboratories.Components.Game.PlayerComponent), 6 },
-		{ typeof(Laboratories.Components.Game.SpeedComponent), 7 },
-		{ typeof(Laboratories.Components.Game.TransformComponent), 8 },
-		{ typeof(Laboratories.Components.Game.ViewComponent), 9 },
-		{ typeof(Laboratories.Game.CharacterControllerComponent), 10 }
+		{ typeof(Laboratories.Components.Game.ClickedComponent), 3 },
+		{ typeof(Laboratories.Components.Game.DraggableObjectComponent), 4 },
+		{ typeof(Laboratories.Components.Game.HighlightComponent), 5 },
+		{ typeof(Laboratories.Components.Game.IdComponent), 6 },
+		{ typeof(Laboratories.Components.Game.NameComponent), 7 },
+		{ typeof(Laboratories.Components.Game.PlacementsComponent), 8 },
+		{ typeof(Laboratories.Components.Game.PlayerComponent), 9 },
+		{ typeof(Laboratories.Components.Game.SpeedComponent), 10 },
+		{ typeof(Laboratories.Components.Game.TransformComponent), 11 },
+		{ typeof(Laboratories.Components.Game.ViewComponent), 12 },
+		{ typeof(Laboratories.Game.CharacterControllerComponent), 13 },
+		{ typeof(Laboratories.Game.HandComponent), 14 },
+		{ typeof(Laboratories.Game.PickupedComponent), 15 },
+		{ typeof(Laboratories.Game.PossibleActionsComponent), 16 }
 	};
 
 	/// <summary>

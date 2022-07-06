@@ -12,3 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 750b40ea92be62f498dc552fdc96b66d, type: 3}
   m_Name: GameConfig
   m_EditorClassIdentifier: 
+  rotationAmount: 0.2
+  rotationSmooth: 6
+  lookLimit: 80
+  lookSpeed: 2
+  rayDistance: 2
+  pauseMenu: {fileID: 6703661739515682809, guid: 1f8a0e4f5e981664eb95c692609caff6,
+    type: 3}
+  radialMenu: {fileID: 3252628741423722890, guid: d4fb5cc6604bb4b42907b32a7e90d819,
+    type: 3}
+  radialMenuRadius: 125
+  radialMenuAppearDuration: 0.2
+  rsmFramesCount: 150

@@ -1,4 +1,5 @@
 using JCMG.EntitasRedux;
+using UnityEngine;
 
 namespace Laboratories.Meta
 {
@@ -19,6 +20,10 @@ namespace Laboratories.Meta
 
 			contexts.Meta.ManagerEntity.ReplaceGameConfig(gameConfig);
 			contexts.Meta.ManagerEntity.ReplaceDeltaTime(0f);
+
+			contexts.Meta.ManagerEntity.ReplaceGameState(GameState.Game);
+			Cursor.lockState = CursorLockMode.Locked;
+			Cursor.visible = false;
 		}
 	}
 }

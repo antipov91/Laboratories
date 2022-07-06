@@ -18,17 +18,25 @@ public partial class MetaEntity
 	public void CopyComponentTo(IComponent component)
 	{
 		#if !ENTITAS_REDUX_NO_IMPL
-		if (component is Laboratories.Components.Meta.GameConfigComponent GameConfig)
+		if (component is Laboratories.Components.Meta.PreviouseGameStateComponent PreviouseGameState)
+		{
+			CopyPreviouseGameStateTo(PreviouseGameState);
+		}
+		else if (component is Laboratories.Components.Meta.GameConfigComponent GameConfig)
 		{
 			CopyGameConfigTo(GameConfig);
-		}
-		else if (component is Laboratories.Components.Meta.DeltaTimeComponent DeltaTime)
-		{
-			CopyDeltaTimeTo(DeltaTime);
 		}
 		else if (component is Laboratories.Components.Meta.ManagerComponent Manager)
 		{
 			IsManager = true;
+		}
+		else if (component is Laboratories.Components.Meta.GameStateComponent GameState)
+		{
+			CopyGameStateTo(GameState);
+		}
+		else if (component is Laboratories.Components.Meta.DeltaTimeComponent DeltaTime)
+		{
+			CopyDeltaTimeTo(DeltaTime);
 		}
 		#endif
 	}

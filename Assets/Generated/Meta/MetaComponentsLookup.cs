@@ -15,29 +15,37 @@ public static class MetaComponentsLookup
 {
 	public const int DeltaTime = 0;
 	public const int GameConfig = 1;
-	public const int Manager = 2;
+	public const int GameState = 2;
+	public const int Manager = 3;
+	public const int PreviouseGameState = 4;
 
-	public const int TotalComponents = 3;
+	public const int TotalComponents = 5;
 
 	public static readonly string[] ComponentNames =
 	{
 		"DeltaTime",
 		"GameConfig",
-		"Manager"
+		"GameState",
+		"Manager",
+		"PreviouseGameState"
 	};
 
 	public static readonly System.Type[] ComponentTypes =
 	{
 		typeof(Laboratories.Components.Meta.DeltaTimeComponent),
 		typeof(Laboratories.Components.Meta.GameConfigComponent),
-		typeof(Laboratories.Components.Meta.ManagerComponent)
+		typeof(Laboratories.Components.Meta.GameStateComponent),
+		typeof(Laboratories.Components.Meta.ManagerComponent),
+		typeof(Laboratories.Components.Meta.PreviouseGameStateComponent)
 	};
 
 	public static readonly Dictionary<Type, int> ComponentTypeToIndex = new Dictionary<Type, int>
 	{
 		{ typeof(Laboratories.Components.Meta.DeltaTimeComponent), 0 },
 		{ typeof(Laboratories.Components.Meta.GameConfigComponent), 1 },
-		{ typeof(Laboratories.Components.Meta.ManagerComponent), 2 }
+		{ typeof(Laboratories.Components.Meta.GameStateComponent), 2 },
+		{ typeof(Laboratories.Components.Meta.ManagerComponent), 3 },
+		{ typeof(Laboratories.Components.Meta.PreviouseGameStateComponent), 4 }
 	};
 
 	/// <summary>

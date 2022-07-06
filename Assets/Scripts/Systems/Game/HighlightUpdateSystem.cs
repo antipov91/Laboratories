@@ -16,6 +16,9 @@ namespace Laboratories.Game
 
 		public void Update()
 		{
+			if (contexts.Game.PlayerEntity.HasDraggableObject)
+				return;
+
 			var cursorPosition = contexts.Input.ManagerEntity.Cursor.value;
 
 			var ray = contexts.Game.CameraEntity.Camera.instance.ScreenPointToRay(cursorPosition);
@@ -34,9 +37,12 @@ namespace Laboratories.Game
 								if (highlightEntity.Highlight.value)
 									highlightEntity.ReplaceHighlight(false);
 
-							gameEntity.ReplaceHighlight(true);
+							gameEntity.ReplaceHighlight(true);								
 						}
 						isFoundedHighlight = true;
+
+						if (contexts.Input.ManagerEntity.Action.isDown)
+							gameEntity.IsClicked = true;
 					}
 				}
 			}

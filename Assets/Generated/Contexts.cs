@@ -57,17 +57,21 @@ public partial class Contexts : JCMG.EntitasRedux.IContexts
 	static Contexts _sharedInstance;
 	#endif
 
+	public CircuitContext Circuit { get; set; }
 	public GameContext Game { get; set; }
 	public InputContext Input { get; set; }
 	public MetaContext Meta { get; set; }
+	public UiContext Ui { get; set; }
 
-	public JCMG.EntitasRedux.IContext[] AllContexts { get { return new JCMG.EntitasRedux.IContext [] { Game, Input, Meta }; } }
+	public JCMG.EntitasRedux.IContext[] AllContexts { get { return new JCMG.EntitasRedux.IContext [] { Circuit, Game, Input, Meta, Ui }; } }
 
 	public Contexts()
 	{
+		Circuit = new CircuitContext();
 		Game = new GameContext();
 		Input = new InputContext();
 		Meta = new MetaContext();
+		Ui = new UiContext();
 
 		var postConstructors = System.Linq.Enumerable.Where(
 			GetType().GetMethods(),
@@ -147,9 +151,11 @@ public partial class Contexts {
 	[JCMG.EntitasRedux.PostConstructor]
 	public void InitializeContextObservers() {
 		try {
+			CreateContextObserver(Circuit);
 			CreateContextObserver(Game);
 			CreateContextObserver(Input);
 			CreateContextObserver(Meta);
+			CreateContextObserver(Ui);
 		} catch(System.Exception) {
 		}
 	}

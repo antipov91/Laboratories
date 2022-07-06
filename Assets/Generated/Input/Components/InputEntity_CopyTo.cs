@@ -22,21 +22,25 @@ public partial class InputEntity
 		{
 			CopyMoveStixTo(MoveStix);
 		}
-		else if (component is Laboratories.Components.Input.RightStixComponent RightStix)
+		else if (component is Laboratories.Components.Input.ActionComponent Action)
 		{
-			CopyRightStixTo(RightStix);
+			CopyActionTo(Action);
 		}
 		else if (component is Laboratories.Components.Input.ReturnComponent Return)
 		{
 			CopyReturnTo(Return);
 		}
-		else if (component is Laboratories.Components.Input.CursorComponent Cursor)
+		else if (component is Laboratories.Components.Input.RightStixComponent RightStix)
 		{
-			CopyCursorTo(Cursor);
+			CopyRightStixTo(RightStix);
 		}
 		else if (component is Laboratories.Components.Input.ManagerComponent Manager)
 		{
 			IsManager = true;
+		}
+		else if (component is Laboratories.Components.Input.CursorComponent Cursor)
+		{
+			CopyCursorTo(Cursor);
 		}
 		#endif
 	}

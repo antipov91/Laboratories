@@ -20,7 +20,7 @@ namespace Laboratories.Circuits
         protected override void Execute(List<CircuitEntity> entities)
         {
             foreach (var entity in entities)
-                entity.ReplaceTemporaryCurrentRSM(0, 0, new Queue<ElectricalCircuit.SignalFrame>());
+                entity.ReplaceTemporaryVoltageRSM(0, 0, new Queue<ElectricalCircuit.SignalFrame>());
         }
     }
 }

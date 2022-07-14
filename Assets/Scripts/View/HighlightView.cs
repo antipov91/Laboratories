@@ -4,14 +4,15 @@ namespace Laboratories.Views
 {
     public class HighlightView : MonoView<GameEntity>, IHighlightAddedListener
     {
-        private Renderer renderer;
+        [SerializeField] private Renderer renderer;
         private MaterialPropertyBlock block;
 
         private void Awake()
         {
             block = new MaterialPropertyBlock();
 
-            renderer = GetComponent<Renderer>();
+            if (renderer == null)
+                renderer = GetComponent<Renderer>();
         }
 
         public override void LinkEntity(Contexts contexts, GameEntity entity)

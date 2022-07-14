@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,11 +8,14 @@ namespace Laboratories
     {
         [SerializeField] private int count = 10;
         [SerializeField] private float height = 0.1f;
-        [SerializeField] private Transform start;
-        [SerializeField] private Transform end;
-
+        [SerializeField] private Transform firtsConnect;
+        [SerializeField] private Transform secondConnect;
+        
         private LineRenderer lineRenderer;
 
+        private SphereCollider sphereCollider;
+        private Vector3 startPosition;
+        private Vector3 endPosition;
         private Vector3 previouseStartPosition;
         private Vector3 previouseEndPosition;
         private float previouseHeight;
@@ -20,47 +24,80 @@ namespace Laboratories
         private void Awake()
         {
             lineRenderer = GetComponent<LineRenderer>();
+            sphereCollider = GetComponent<SphereCollider>();
         }
 
         private void Update()
         {
-            if (start.position == previouseStartPosition &&
-                end.position == previouseEndPosition &&
+            if (startPosition == previouseStartPosition &&
+                endPosition == previouseEndPosition &&
                 previouseHeight == height &&
                 previouseCount == count)
                 return;
 
-            previouseStartPosition = start.position;
-            previouseEndPosition = end.position;
+            previouseStartPosition = startPosition;
+            previouseEndPosition = endPosition;
             previouseHeight = height;
             previouseCount = count;
 
             var points = new Vector3[7];
-            var direction = end.position - start.position;
+            var direction = endPosition - startPosition;
 
-            points[0] = start.position;
-            points[1] = start.position + 0.9f * height * Vector3.up;
-            points[2] = start.position + height * Vector3.up + 0.1f * height * direction.normalized;
+            points[0] = startPosition;
+            points[1] = startPosition + 0.9f * height * Vector3.up;
+            points[2] = startPosition + height * Vector3.up + 0.1f * height * direction.normalized;
 
-            points[3] = start.position + height * Vector3.up + direction / 2f;
+            points[3] = startPosition + height * Vector3.up + direction / 2f;
 
-            points[4] = end.position + height * Vector3.up - 0.1f * height * direction.normalized;
-            points[5] = end.position + 0.9f * height * Vector3.up;
-            points[6] = end.position;
+            points[4] = endPosition + height * Vector3.up - 0.1f * height * direction.normalized;
+            points[5] = endPosition + 0.9f * height * Vector3.up;
+            points[6] = endPosition;
 
             var linePoints = GetLinePoints(points).ToArray();
             lineRenderer.positionCount = linePoints.Length;
             lineRenderer.SetPositions(linePoints);
+
+            var center = (points[0] + points[1] + points[2] + points[3] + points[4] + points[5] + points[6]) / (float)points.Length;
+
+            transform.position = Vector3.zero;
+
+            sphereCollider.center = center;
+            
+            firtsConnect.position = points[0];
+            firtsConnect.rotation = Quaternion.identity;
+            secondConnect.position = points[6];
+            secondConnect.rotation = Quaternion.identity;
+        }
+
+        public void Connect(Vector3 start, Vector3 end, float velocity)
+        {
+            startPosition = start;
+            endPosition = start;
+            
+            StartCoroutine(ConnectAnimation(GetPointsOfSegment(start, end), velocity));
+        }
+
+        private IEnumerator ConnectAnimation(Vector3[] path, float velocity)
+        {
+            startPosition = path[0];
+            for (int i = 1; i < path.Length; i++)
+            {
+                while (startPosition != path[i])
+                {
+                    startPosition = Vector3.MoveTowards(startPosition, path[i], Time.deltaTime * velocity);
+                    yield return new WaitForEndOfFrame();
+                }
+            }
         }
 
         public void SetStartPosition(Vector3 position)
         {
-            start.position = position;
+            startPosition = position;
         }
 
         public void SetEndPosition(Vector3 position)
         {
-            end.position = position;
+            endPosition = position;
         }
 
         public void SetCount(int count)
@@ -71,6 +108,24 @@ namespace Laboratories
         public void SetHeight(float height)
         {
             this.height = height;
+        }
+
+        private Vector3[] GetPointsOfSegment(Vector3 start, Vector3 end)
+        {
+            var points = new Vector3[7];
+            var direction = end - start;
+
+            points[0] = start;
+            points[1] = start + 0.9f * height * Vector3.up;
+            points[2] = start + height * Vector3.up + 0.1f * height * direction.normalized;
+
+            points[3] = start + height * Vector3.up + direction / 2f;
+
+            points[4] = end + height * Vector3.up - 0.1f * height * direction.normalized;
+            points[5] = end + 0.9f * height * Vector3.up;
+            points[6] = end;
+
+            return GetLinePoints(points).ToArray();
         }
 
         private List<Vector3> GetLinePoints(Vector3[] points)

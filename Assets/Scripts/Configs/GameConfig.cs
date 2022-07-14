@@ -19,6 +19,7 @@ namespace Laboratories
         [Header("UiPrefabs")]
         public PauseMenu pauseMenu;
         public RadialMenu radialMenu;
+        public GroupDeviceSettingsPanel deviceSettingsMenu;
 
         [Header("RadialMenu")]
         public float radialMenuRadius = 1f;

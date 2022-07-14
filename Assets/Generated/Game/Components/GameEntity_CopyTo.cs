@@ -18,21 +18,33 @@ public partial class GameEntity
 	public void CopyComponentTo(IComponent component)
 	{
 		#if !ENTITAS_REDUX_NO_IMPL
-		if (component is Laboratories.Components.Game.PlacementsComponent Placements)
+		if (component is Laboratories.Components.Game.DeviceActiveComponent DeviceActive)
 		{
-			CopyPlacementsTo(Placements);
-		}
-		else if (component is Laboratories.Components.Game.DraggableObjectComponent DraggableObject)
-		{
-			CopyDraggableObjectTo(DraggableObject);
+			CopyDeviceActiveTo(DeviceActive);
 		}
 		else if (component is Laboratories.Components.Game.IdComponent Id)
 		{
 			CopyIdTo(Id);
 		}
+		else if (component is Laboratories.Components.Game.DestroyedComponent Destroyed)
+		{
+			IsDestroyed = true;
+		}
+		else if (component is Laboratories.Components.Game.DraggableObjectComponent DraggableObject)
+		{
+			CopyDraggableObjectTo(DraggableObject);
+		}
+		else if (component is Laboratories.Components.Game.SocketComponent Socket)
+		{
+			CopySocketTo(Socket);
+		}
 		else if (component is Laboratories.Components.Game.NameComponent Name)
 		{
 			CopyNameTo(Name);
+		}
+		else if (component is Laboratories.Components.Game.SelectedWirePrefabComponent SelectedWirePrefab)
+		{
+			CopySelectedWirePrefabTo(SelectedWirePrefab);
 		}
 		else if (component is Laboratories.Components.Game.PlayerComponent Player)
 		{
@@ -46,13 +58,25 @@ public partial class GameEntity
 		{
 			CopyTransformTo(Transform);
 		}
+		else if (component is Laboratories.Components.Game.DeviceComponent Device)
+		{
+			CopyDeviceTo(Device);
+		}
 		else if (component is Laboratories.Components.Game.HighlightComponent Highlight)
 		{
 			CopyHighlightTo(Highlight);
 		}
+		else if (component is Laboratories.Components.Game.PlacementsComponent Placements)
+		{
+			CopyPlacementsTo(Placements);
+		}
 		else if (component is Laboratories.Components.Game.ClickedComponent Clicked)
 		{
 			IsClicked = true;
+		}
+		else if (component is Laboratories.Components.Game.InitializeWireComponent InitializeWire)
+		{
+			CopyInitializeWireTo(InitializeWire);
 		}
 		else if (component is Laboratories.Components.Game.CameraMovementFXComponent CameraMovementFX)
 		{
@@ -66,9 +90,25 @@ public partial class GameEntity
 		{
 			CopyViewTo(View);
 		}
+		else if (component is Laboratories.Components.Game.ConnectedComponent Connected)
+		{
+			CopyConnectedTo(Connected);
+		}
+		else if (component is Laboratories.Components.Game.SelectedSocketComponent SelectedSocket)
+		{
+			CopySelectedSocketTo(SelectedSocket);
+		}
+		else if (component is Laboratories.Components.Game.ConnectedCountComponent ConnectedCount)
+		{
+			CopyConnectedCountTo(ConnectedCount);
+		}
 		else if (component is Laboratories.Game.PickupedComponent Pickuped)
 		{
 			IsPickuped = true;
+		}
+		else if (component is Laboratories.Game.InitializeGameObjectComponent InitializeGameObject)
+		{
+			CopyInitializeGameObjectTo(InitializeGameObject);
 		}
 		else if (component is Laboratories.Game.HandComponent Hand)
 		{
@@ -81,6 +121,10 @@ public partial class GameEntity
 		else if (component is Laboratories.Game.PossibleActionsComponent PossibleActions)
 		{
 			CopyPossibleActionsTo(PossibleActions);
+		}
+		else if (component is DeviceActiveAddedListenerComponent DeviceActiveAddedListener)
+		{
+			CopyDeviceActiveAddedListenerTo(DeviceActiveAddedListener);
 		}
 		else if (component is HighlightAddedListenerComponent HighlightAddedListener)
 		{

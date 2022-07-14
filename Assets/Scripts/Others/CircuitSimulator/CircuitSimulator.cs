@@ -103,9 +103,9 @@ namespace Laboratories.ElectricalCircuit
                 {
                     if (firstJoints[i].Id == secondJoints[j].Id)
                     {
-                        //Debug.Log(String.Format("Connect: {0} to {1} ({2},{3}) socket id: {4}",
-                        //firstElement.CircuitElement.GetType().Name, secondElement.CircuitElement.GetType().Name,
-                        //i, j, firstJoints[i].Id));
+                        UnityEngine.Debug.Log(String.Format("Connect: {0} to {1} ({2},{3}) socket id: {4}",
+                        firstElement.CircuitElement.GetType().Name, secondElement.CircuitElement.GetType().Name,
+                        i, j, firstJoints[i].Id));
 
                         circuit.AddElement(firstElement.CircuitElement);
                         circuit.AddElement(secondElement.CircuitElement);

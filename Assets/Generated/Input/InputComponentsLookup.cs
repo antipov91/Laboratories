@@ -19,8 +19,9 @@ public static class InputComponentsLookup
 	public const int Manager = 3;
 	public const int Return = 4;
 	public const int RightStix = 5;
+	public const int Zoom = 6;
 
-	public const int TotalComponents = 6;
+	public const int TotalComponents = 7;
 
 	public static readonly string[] ComponentNames =
 	{
@@ -29,7 +30,8 @@ public static class InputComponentsLookup
 		"Cursor",
 		"Manager",
 		"Return",
-		"RightStix"
+		"RightStix",
+		"Zoom"
 	};
 
 	public static readonly System.Type[] ComponentTypes =
@@ -39,7 +41,8 @@ public static class InputComponentsLookup
 		typeof(Laboratories.Components.Input.CursorComponent),
 		typeof(Laboratories.Components.Input.ManagerComponent),
 		typeof(Laboratories.Components.Input.ReturnComponent),
-		typeof(Laboratories.Components.Input.RightStixComponent)
+		typeof(Laboratories.Components.Input.RightStixComponent),
+		typeof(Laboratories.Components.Input.ZoomComponent)
 	};
 
 	public static readonly Dictionary<Type, int> ComponentTypeToIndex = new Dictionary<Type, int>
@@ -49,7 +52,8 @@ public static class InputComponentsLookup
 		{ typeof(Laboratories.Components.Input.CursorComponent), 2 },
 		{ typeof(Laboratories.Components.Input.ManagerComponent), 3 },
 		{ typeof(Laboratories.Components.Input.ReturnComponent), 4 },
-		{ typeof(Laboratories.Components.Input.RightStixComponent), 5 }
+		{ typeof(Laboratories.Components.Input.RightStixComponent), 5 },
+		{ typeof(Laboratories.Components.Input.ZoomComponent), 6 }
 	};
 
 	/// <summary>

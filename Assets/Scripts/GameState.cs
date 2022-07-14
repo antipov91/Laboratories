@@ -4,6 +4,7 @@ namespace Laboratories
     {
         Game,
         Paused,
-        Focused
+        Focused,
+        Edited
     }
 }

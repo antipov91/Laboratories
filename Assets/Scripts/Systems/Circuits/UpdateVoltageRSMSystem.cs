@@ -25,6 +25,7 @@ namespace Laboratories.Circuits
                 var totalSquare = entity.TemporaryVoltageRSM.totalSquare;
                 var frames = entity.TemporaryVoltageRSM.frames;
 
+                UnityEngine.Debug.Log(entity.Element.instance.Voltage);
                 var deltaTime = contexts.Circuit.CircuitSimulatorEntity.DeltaTime.value;
                 var square = Mathf.Pow(entity.Element.instance.Voltage, 2) * deltaTime;
 

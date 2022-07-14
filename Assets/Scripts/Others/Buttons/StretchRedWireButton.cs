@@ -1,6 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+using System.Linq;
 
 namespace Laboratories
 {
@@ -8,12 +6,16 @@ namespace Laboratories
     {
         public override bool CheckPossibleAction(Contexts contexts, GameEntity senderEntity)
         {
-            throw new System.NotImplementedException();
+            return senderEntity.HasSocket && 
+                   senderEntity.PossibleActions.values.Contains(Actions.CreateWire) &&
+                   contexts.Game.PlayerEntity.HasSelectedSocket == false;
         }
 
         protected override void Click(Contexts contexts, GameEntity senderEntity)
         {
-            throw new System.NotImplementedException();
+            var playerEntity = contexts.Game.PlayerEntity;
+            playerEntity.ReplaceSelectedSocket(senderEntity.Id.value);
+            playerEntity.ReplaceSelectedWirePrefab(WireType.RedWire);
         }
     }
 }

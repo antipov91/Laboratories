@@ -18,7 +18,11 @@ public partial class UiEntity
 	public void CopyComponentTo(IComponent component)
 	{
 		#if !ENTITAS_REDUX_NO_IMPL
-		if (component is Laboratories.Components.Ui.RadialMenuComponent RadialMenu)
+		if (component is Laboratories.Components.Ui.DeviceSettingsComponent DeviceSettings)
+		{
+			CopyDeviceSettingsTo(DeviceSettings);
+		}
+		else if (component is Laboratories.Components.Ui.RadialMenuComponent RadialMenu)
 		{
 			CopyRadialMenuTo(RadialMenu);
 		}

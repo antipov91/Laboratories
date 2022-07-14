@@ -18,12 +18,15 @@ namespace Laboratories
                 case GameState.Focused:
                     AddFocusedSystems(contexts);
                     break;
+                case GameState.Edited:
+                    AddEditedSystems(contexts);
+                    break;
                 default:
                     throw new ArgumentOutOfRangeException();
             }
         }
 
-        private void AddFocusedSystems(Contexts contexts)
+        private void AddGameSystems(Contexts contexts)
         {
             Add(new CircuitsInitializeSystem(contexts));
 
@@ -33,16 +36,22 @@ namespace Laboratories
             Add(new InitializeVoltageRSMSystem(contexts));
             Add(new UpdateCurrentRSMSystem(contexts));
             Add(new UpdateVoltageRSMSystem(contexts));
+            Add(new UpdateScopeSignalSystem(contexts));
+        }
+
+        private void AddFocusedSystems(Contexts contexts)
+        {
+
         }
 
         private void AddPausedSystems(Contexts contexts)
         {
-            
+
         }
 
-        private void AddGameSystems(Contexts contexts)
+        private void AddEditedSystems(Contexts contexts)
         {
-            
+
         }
     }
 }

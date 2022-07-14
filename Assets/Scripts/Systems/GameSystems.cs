@@ -17,6 +17,9 @@ namespace Laboratories.Game
                 case GameState.Focused:
                     AddFocusedSystems(contexts);
                     break;
+                case GameState.Edited:
+                    AddEditedSystems(contexts);
+                    break;
                 default:
                     throw new ArgumentOutOfRangeException();
             }
@@ -26,6 +29,7 @@ namespace Laboratories.Game
         {
             Add(new GameEventSystems(contexts));
             Add(new InitializeEntitiesInSceneSystem(contexts));
+            Add(new InitializeEntitySystem(contexts));
 
             Add(new MovementPlayerSystem(contexts));
             Add(new MovementEffectsSystem(contexts));
@@ -35,16 +39,38 @@ namespace Laboratories.Game
             Add(new InteractableSystem(contexts));
             Add(new PickupSystem(contexts));
             Add(new PlacementSystem(contexts));
+            Add(new UpdateZoomSystem(contexts));
+
+            Add(new InitializeDeviceSystem(contexts));
+            Add(new UpdateDeviceSystem(contexts));
+            Add(new ReleaseDeviceSystem(contexts));
+
+            Add(new DestroySystem(contexts));
         }
 
         private void AddPausedSystems(Contexts contexts)
         {
+            Add(new InitializeEntitySystem(contexts));
             Add(new UpdatePauseSystem(contexts));
+
+            Add(new ReleaseDeviceSystem(contexts));
+
+            Add(new DestroySystem(contexts));
         }
 
         private void AddFocusedSystems(Contexts contexts)
         {
+            Add(new InitializeEntitySystem(contexts));
             Add(new UpdatePauseSystem(contexts));
+
+            Add(new ReleaseDeviceSystem(contexts));
+
+            Add(new DestroySystem(contexts));
+        }
+
+        private void AddEditedSystems(Contexts contexts)
+        {
+            
         }
     }
 }

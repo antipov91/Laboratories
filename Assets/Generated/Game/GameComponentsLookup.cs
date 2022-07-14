@@ -13,87 +13,131 @@ using JCMG.EntitasRedux;
 
 public static class GameComponentsLookup
 {
-	public const int HighlightAddedListener = 0;
-	public const int Camera = 1;
-	public const int CameraMovementFX = 2;
-	public const int Clicked = 3;
-	public const int DraggableObject = 4;
-	public const int Highlight = 5;
-	public const int Id = 6;
-	public const int Name = 7;
-	public const int Placements = 8;
-	public const int Player = 9;
-	public const int Speed = 10;
-	public const int Transform = 11;
-	public const int View = 12;
-	public const int CharacterController = 13;
-	public const int Hand = 14;
-	public const int Pickuped = 15;
-	public const int PossibleActions = 16;
+	public const int DeviceActiveAddedListener = 0;
+	public const int HighlightAddedListener = 1;
+	public const int Camera = 2;
+	public const int CameraMovementFX = 3;
+	public const int Clicked = 4;
+	public const int Connected = 5;
+	public const int ConnectedCount = 6;
+	public const int Destroyed = 7;
+	public const int DeviceActive = 8;
+	public const int Device = 9;
+	public const int DraggableObject = 10;
+	public const int Highlight = 11;
+	public const int Id = 12;
+	public const int InitializeWire = 13;
+	public const int Name = 14;
+	public const int Placements = 15;
+	public const int Player = 16;
+	public const int SelectedSocket = 17;
+	public const int SelectedWirePrefab = 18;
+	public const int Socket = 19;
+	public const int Speed = 20;
+	public const int Transform = 21;
+	public const int View = 22;
+	public const int CharacterController = 23;
+	public const int Hand = 24;
+	public const int InitializeGameObject = 25;
+	public const int Pickuped = 26;
+	public const int PossibleActions = 27;
 
-	public const int TotalComponents = 17;
+	public const int TotalComponents = 28;
 
 	public static readonly string[] ComponentNames =
 	{
+		"DeviceActiveAddedListener",
 		"HighlightAddedListener",
 		"Camera",
 		"CameraMovementFX",
 		"Clicked",
+		"Connected",
+		"ConnectedCount",
+		"Destroyed",
+		"DeviceActive",
+		"Device",
 		"DraggableObject",
 		"Highlight",
 		"Id",
+		"InitializeWire",
 		"Name",
 		"Placements",
 		"Player",
+		"SelectedSocket",
+		"SelectedWirePrefab",
+		"Socket",
 		"Speed",
 		"Transform",
 		"View",
 		"CharacterController",
 		"Hand",
+		"InitializeGameObject",
 		"Pickuped",
 		"PossibleActions"
 	};
 
 	public static readonly System.Type[] ComponentTypes =
 	{
+		typeof(DeviceActiveAddedListenerComponent),
 		typeof(HighlightAddedListenerComponent),
 		typeof(Laboratories.Components.Game.CameraComponent),
 		typeof(Laboratories.Components.Game.CameraMovementFXComponent),
 		typeof(Laboratories.Components.Game.ClickedComponent),
+		typeof(Laboratories.Components.Game.ConnectedComponent),
+		typeof(Laboratories.Components.Game.ConnectedCountComponent),
+		typeof(Laboratories.Components.Game.DestroyedComponent),
+		typeof(Laboratories.Components.Game.DeviceActiveComponent),
+		typeof(Laboratories.Components.Game.DeviceComponent),
 		typeof(Laboratories.Components.Game.DraggableObjectComponent),
 		typeof(Laboratories.Components.Game.HighlightComponent),
 		typeof(Laboratories.Components.Game.IdComponent),
+		typeof(Laboratories.Components.Game.InitializeWireComponent),
 		typeof(Laboratories.Components.Game.NameComponent),
 		typeof(Laboratories.Components.Game.PlacementsComponent),
 		typeof(Laboratories.Components.Game.PlayerComponent),
+		typeof(Laboratories.Components.Game.SelectedSocketComponent),
+		typeof(Laboratories.Components.Game.SelectedWirePrefabComponent),
+		typeof(Laboratories.Components.Game.SocketComponent),
 		typeof(Laboratories.Components.Game.SpeedComponent),
 		typeof(Laboratories.Components.Game.TransformComponent),
 		typeof(Laboratories.Components.Game.ViewComponent),
 		typeof(Laboratories.Game.CharacterControllerComponent),
 		typeof(Laboratories.Game.HandComponent),
+		typeof(Laboratories.Game.InitializeGameObjectComponent),
 		typeof(Laboratories.Game.PickupedComponent),
 		typeof(Laboratories.Game.PossibleActionsComponent)
 	};
 
 	public static readonly Dictionary<Type, int> ComponentTypeToIndex = new Dictionary<Type, int>
 	{
-		{ typeof(HighlightAddedListenerComponent), 0 },
-		{ typeof(Laboratories.Components.Game.CameraComponent), 1 },
-		{ typeof(Laboratories.Components.Game.CameraMovementFXComponent), 2 },
-		{ typeof(Laboratories.Components.Game.ClickedComponent), 3 },
-		{ typeof(Laboratories.Components.Game.DraggableObjectComponent), 4 },
-		{ typeof(Laboratories.Components.Game.HighlightComponent), 5 },
-		{ typeof(Laboratories.Components.Game.IdComponent), 6 },
-		{ typeof(Laboratories.Components.Game.NameComponent), 7 },
-		{ typeof(Laboratories.Components.Game.PlacementsComponent), 8 },
-		{ typeof(Laboratories.Components.Game.PlayerComponent), 9 },
-		{ typeof(Laboratories.Components.Game.SpeedComponent), 10 },
-		{ typeof(Laboratories.Components.Game.TransformComponent), 11 },
-		{ typeof(Laboratories.Components.Game.ViewComponent), 12 },
-		{ typeof(Laboratories.Game.CharacterControllerComponent), 13 },
-		{ typeof(Laboratories.Game.HandComponent), 14 },
-		{ typeof(Laboratories.Game.PickupedComponent), 15 },
-		{ typeof(Laboratories.Game.PossibleActionsComponent), 16 }
+		{ typeof(DeviceActiveAddedListenerComponent), 0 },
+		{ typeof(HighlightAddedListenerComponent), 1 },
+		{ typeof(Laboratories.Components.Game.CameraComponent), 2 },
+		{ typeof(Laboratories.Components.Game.CameraMovementFXComponent), 3 },
+		{ typeof(Laboratories.Components.Game.ClickedComponent), 4 },
+		{ typeof(Laboratories.Components.Game.ConnectedComponent), 5 },
+		{ typeof(Laboratories.Components.Game.ConnectedCountComponent), 6 },
+		{ typeof(Laboratories.Components.Game.DestroyedComponent), 7 },
+		{ typeof(Laboratories.Components.Game.DeviceActiveComponent), 8 },
+		{ typeof(Laboratories.Components.Game.DeviceComponent), 9 },
+		{ typeof(Laboratories.Components.Game.DraggableObjectComponent), 10 },
+		{ typeof(Laboratories.Components.Game.HighlightComponent), 11 },
+		{ typeof(Laboratories.Components.Game.IdComponent), 12 },
+		{ typeof(Laboratories.Components.Game.InitializeWireComponent), 13 },
+		{ typeof(Laboratories.Components.Game.NameComponent), 14 },
+		{ typeof(Laboratories.Components.Game.PlacementsComponent), 15 },
+		{ typeof(Laboratories.Components.Game.PlayerComponent), 16 },
+		{ typeof(Laboratories.Components.Game.SelectedSocketComponent), 17 },
+		{ typeof(Laboratories.Components.Game.SelectedWirePrefabComponent), 18 },
+		{ typeof(Laboratories.Components.Game.SocketComponent), 19 },
+		{ typeof(Laboratories.Components.Game.SpeedComponent), 20 },
+		{ typeof(Laboratories.Components.Game.TransformComponent), 21 },
+		{ typeof(Laboratories.Components.Game.ViewComponent), 22 },
+		{ typeof(Laboratories.Game.CharacterControllerComponent), 23 },
+		{ typeof(Laboratories.Game.HandComponent), 24 },
+		{ typeof(Laboratories.Game.InitializeGameObjectComponent), 25 },
+		{ typeof(Laboratories.Game.PickupedComponent), 26 },
+		{ typeof(Laboratories.Game.PossibleActionsComponent), 27 }
 	};
 
 	/// <summary>

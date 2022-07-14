@@ -11,6 +11,7 @@ public sealed class GameEventSystems : Feature
 {
 	public GameEventSystems(Contexts contexts)
 	{
+		Add(new DeviceActiveAddedEventSystem(contexts)); // priority: 0
 		Add(new HighlightAddedEventSystem(contexts)); // priority: 0
 	}
 }

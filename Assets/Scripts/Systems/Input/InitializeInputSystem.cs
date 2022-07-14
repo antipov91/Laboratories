@@ -18,6 +18,7 @@ namespace Laboratories.Input
 
 			contexts.Input.ManagerEntity.ReplaceReturn(false, false, false);
 			contexts.Input.ManagerEntity.ReplaceAction(false, false, false);
+			contexts.Input.ManagerEntity.ReplaceZoom(false, false, false);
 
 			contexts.Input.ManagerEntity.ReplaceRightStix(Vector2.zero);
 			contexts.Input.ManagerEntity.ReplaceMoveStix(Vector2.zero);

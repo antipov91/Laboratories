@@ -18,11 +18,13 @@ public static class CircuitComponentsLookup
 	public const int CurrentRSM = 2;
 	public const int DeltaTime = 3;
 	public const int Element = 4;
-	public const int TemporaryCurrentRSM = 5;
-	public const int VoltageRSM = 6;
-	public const int TemporaryVoltageRSM = 7;
+	public const int ScopeSignal = 5;
+	public const int ScopeSignalResult = 6;
+	public const int TemporaryCurrentRSM = 7;
+	public const int VoltageRSM = 8;
+	public const int TemporaryVoltageRSM = 9;
 
-	public const int TotalComponents = 8;
+	public const int TotalComponents = 10;
 
 	public static readonly string[] ComponentNames =
 	{
@@ -31,6 +33,8 @@ public static class CircuitComponentsLookup
 		"CurrentRSM",
 		"DeltaTime",
 		"Element",
+		"ScopeSignal",
+		"ScopeSignalResult",
 		"TemporaryCurrentRSM",
 		"VoltageRSM",
 		"TemporaryVoltageRSM"
@@ -43,6 +47,8 @@ public static class CircuitComponentsLookup
 		typeof(Laboratories.Components.Circuit.CurrentRSMComponent),
 		typeof(Laboratories.Components.Circuit.DeltaTimeComponent),
 		typeof(Laboratories.Components.Circuit.ElementComponent),
+		typeof(Laboratories.Components.Circuit.ScopeSignalComponent),
+		typeof(Laboratories.Components.Circuit.ScopeSignalResultComponent),
 		typeof(Laboratories.Components.Circuit.TemporaryCurrentRSMComponent),
 		typeof(Laboratories.Components.Circuit.VoltageRSMComponent),
 		typeof(LaboratoriesComponents.Circuit.TemporaryVoltageRSMComponent)
@@ -55,9 +61,11 @@ public static class CircuitComponentsLookup
 		{ typeof(Laboratories.Components.Circuit.CurrentRSMComponent), 2 },
 		{ typeof(Laboratories.Components.Circuit.DeltaTimeComponent), 3 },
 		{ typeof(Laboratories.Components.Circuit.ElementComponent), 4 },
-		{ typeof(Laboratories.Components.Circuit.TemporaryCurrentRSMComponent), 5 },
-		{ typeof(Laboratories.Components.Circuit.VoltageRSMComponent), 6 },
-		{ typeof(LaboratoriesComponents.Circuit.TemporaryVoltageRSMComponent), 7 }
+		{ typeof(Laboratories.Components.Circuit.ScopeSignalComponent), 5 },
+		{ typeof(Laboratories.Components.Circuit.ScopeSignalResultComponent), 6 },
+		{ typeof(Laboratories.Components.Circuit.TemporaryCurrentRSMComponent), 7 },
+		{ typeof(Laboratories.Components.Circuit.VoltageRSMComponent), 8 },
+		{ typeof(LaboratoriesComponents.Circuit.TemporaryVoltageRSMComponent), 9 }
 	};
 
 	/// <summary>

@@ -17,6 +17,9 @@ namespace Laboratories.Input
                 case GameState.Focused:
                     AddFocusedSystem(contexts);
                     break;
+                case GameState.Edited:
+                    AddEditedSystem(contexts);
+                    break;
                 default:
                     throw new ArgumentOutOfRangeException();
             }
@@ -37,6 +40,11 @@ namespace Laboratories.Input
         private void AddFocusedSystem(Contexts contexts)
         {
             Add(new UpdateInputSystem(contexts));
+        }
+
+        private void AddEditedSystem(Contexts contexts)
+        {
+
         }
     }
 }

@@ -16,6 +16,8 @@ namespace Laboratories
                     break;
                 case GameState.Focused:
                     break;
+                case GameState.Edited:
+                    break;
                 default:
                     throw new ArgumentOutOfRangeException();
             }

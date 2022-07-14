@@ -13,15 +13,17 @@ using JCMG.EntitasRedux;
 
 public static class UiComponentsLookup
 {
-	public const int InvokeRadialMenuCommand = 0;
-	public const int Manager = 1;
-	public const int PauseMenu = 2;
-	public const int RadialMenu = 3;
+	public const int DeviceSettings = 0;
+	public const int InvokeRadialMenuCommand = 1;
+	public const int Manager = 2;
+	public const int PauseMenu = 3;
+	public const int RadialMenu = 4;
 
-	public const int TotalComponents = 4;
+	public const int TotalComponents = 5;
 
 	public static readonly string[] ComponentNames =
 	{
+		"DeviceSettings",
 		"InvokeRadialMenuCommand",
 		"Manager",
 		"PauseMenu",
@@ -30,6 +32,7 @@ public static class UiComponentsLookup
 
 	public static readonly System.Type[] ComponentTypes =
 	{
+		typeof(Laboratories.Components.Ui.DeviceSettingsComponent),
 		typeof(Laboratories.Components.Ui.InvokeRadialMenuCommandComponent),
 		typeof(Laboratories.Components.Ui.ManagerComponent),
 		typeof(Laboratories.Components.Ui.PauseMenuComponent),
@@ -38,10 +41,11 @@ public static class UiComponentsLookup
 
 	public static readonly Dictionary<Type, int> ComponentTypeToIndex = new Dictionary<Type, int>
 	{
-		{ typeof(Laboratories.Components.Ui.InvokeRadialMenuCommandComponent), 0 },
-		{ typeof(Laboratories.Components.Ui.ManagerComponent), 1 },
-		{ typeof(Laboratories.Components.Ui.PauseMenuComponent), 2 },
-		{ typeof(Laboratories.Components.Ui.RadialMenuComponent), 3 }
+		{ typeof(Laboratories.Components.Ui.DeviceSettingsComponent), 0 },
+		{ typeof(Laboratories.Components.Ui.InvokeRadialMenuCommandComponent), 1 },
+		{ typeof(Laboratories.Components.Ui.ManagerComponent), 2 },
+		{ typeof(Laboratories.Components.Ui.PauseMenuComponent), 3 },
+		{ typeof(Laboratories.Components.Ui.RadialMenuComponent), 4 }
 	};
 
 	/// <summary>

@@ -21,6 +21,20 @@ MonoBehaviour:
     type: 3}
   radialMenu: {fileID: 3252628741423722890, guid: d4fb5cc6604bb4b42907b32a7e90d819,
     type: 3}
+  deviceSettingsMenu: {fileID: 7535515113920988291, guid: 9c05ace181fc2ed4082b3c28f9afabc6,
+    type: 3}
   radialMenuRadius: 125
   radialMenuAppearDuration: 0.2
   rsmFramesCount: 150
+  blueWirePrefab: {fileID: 592161599807417201, guid: c9900c48ded7c1141acc109e3555dc8e,
+    type: 3}
+  blackWirePrefab: {fileID: 592161599807417201, guid: de675270ea25eeb45a6a9d31347649be,
+    type: 3}
+  redWirePrefab: {fileID: 592161599807417201, guid: 27af165ef9839ee4ab122039da8e6167,
+    type: 3}
+  greyWirePrefab: {fileID: 592161599807417201, guid: 7ee18ab0a690f2f41ba32809b514eaf9,
+    type: 3}
+  purpleWirePrefab: {fileID: 592161599807417201, guid: 85628b46217de7246a31f17b3b974841,
+    type: 3}
+  brownWirePrefab: {fileID: 592161599807417201, guid: b1dcfb89672eca64b94d664b78dd8a32,
+    type: 3}

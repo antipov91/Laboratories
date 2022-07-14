@@ -25,6 +25,9 @@ namespace Laboratories.Game
 
             var moveDirection = (forward * vertical) + (right * horizontal);
 
+            if (!playerEntity.CharacterController.instance.isGrounded)
+                moveDirection.y -= 9.8f * contexts.Meta.ManagerEntity.DeltaTime.value;
+
             playerEntity.CharacterController.instance.Move(moveDirection * contexts.Meta.ManagerEntity.DeltaTime.value);
         }
 	}

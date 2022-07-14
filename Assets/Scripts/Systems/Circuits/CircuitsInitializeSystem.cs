@@ -1,4 +1,5 @@
 using JCMG.EntitasRedux;
+using Laboratories.ElectricalCircuit;
 
 namespace Laboratories.Circuits
 {
@@ -16,9 +17,9 @@ namespace Laboratories.Circuits
 		{
 			contexts.Circuit.IsCircuitSimulator = true;
 
-			var ciruitEnitity = contexts.Circuit.CircuitSimulatorEntity;
+			var circuitEnitity = contexts.Circuit.CircuitSimulatorEntity;
 
-
+			circuitEnitity.ReplaceCircuit(new CircuitSimulator());
 		}
 	}
 }

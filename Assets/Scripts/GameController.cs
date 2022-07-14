@@ -14,6 +14,7 @@ namespace Laboratories
         private Systems gameSystems;
         private Systems pausedSystems;
         private Systems focusedSystems;
+        private Systems editedSystems;
 
         [SerializeField] private GameConfig gameConfig;
 
@@ -24,10 +25,12 @@ namespace Laboratories
             gameSystems = CreateSystems(Contexts.SharedInstance, GameState.Game);
             pausedSystems = CreateSystems(Contexts.SharedInstance, GameState.Paused);
             focusedSystems = CreateSystems(Contexts.SharedInstance, GameState.Focused);
+            editedSystems = CreateSystems(Contexts.SharedInstance, GameState.Edited);
 
             gameSystems.Initialize();
             pausedSystems.Initialize();
             focusedSystems.Initialize();
+            editedSystems.Initialize();
         }
 
         private Systems CreateSystems(Contexts contexts, GameState initState)
@@ -35,9 +38,10 @@ namespace Laboratories
             return new Feature()
                 .Add(new MetaSystems(contexts, initState, gameConfig))
                 .Add(new InputSystems(contexts, initState))
+                .Add(new CircuitsSystems(contexts, initState))
                 .Add(new GameSystems(contexts, initState))
-                .Add(new UiSystems(contexts, initState))
-                .Add(new CircuitsSystems(contexts, initState));
+                .Add(new UiSystems(contexts, initState));
+                
                 //.Add(new CleanupSystems(contexts));*/
         }
 
@@ -59,6 +63,11 @@ namespace Laboratories
                     focusedSystems.Execute();
                     focusedSystems.Update();
                     focusedSystems.Cleanup();
+                    break;
+                case GameState.Edited:
+                    editedSystems.Execute();
+                    editedSystems.Update();
+                    editedSystems.Cleanup();
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();
@@ -85,6 +94,9 @@ namespace Laboratories
                 case GameState.Focused:
                     focusedSystems.FixedUpdate();
                     break;
+                case GameState.Edited:
+                    editedSystems.FixedUpdate();
+                    break;
                 default:
                     throw new ArgumentOutOfRangeException();
             }
@@ -102,6 +114,9 @@ namespace Laboratories
                     break;
                 case GameState.Focused:
                     focusedSystems.LateUpdate();
+                    break;
+                case GameState.Edited:
+                    editedSystems.LateUpdate();
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();

@@ -16,6 +16,7 @@ namespace Laboratories.Input
 		{
 			contexts.Input.ManagerEntity.ReplaceReturn(UnityEngine.Input.GetKeyDown(KeyCode.Escape), UnityEngine.Input.GetKey(KeyCode.Escape), UnityEngine.Input.GetKeyUp(KeyCode.Escape));
 			contexts.Input.ManagerEntity.ReplaceAction(UnityEngine.Input.GetMouseButtonDown(0), UnityEngine.Input.GetMouseButton(0), UnityEngine.Input.GetMouseButtonUp(0));
+			contexts.Input.ManagerEntity.ReplaceZoom(UnityEngine.Input.GetKeyDown(KeyCode.Q), UnityEngine.Input.GetKey(KeyCode.Q), UnityEngine.Input.GetKeyUp(KeyCode.Q));
 
 			var moveVector = new Vector2(UnityEngine.Input.GetAxis("Horizontal"), UnityEngine.Input.GetAxis("Vertical"));
 			var rightStix = new Vector2(UnityEngine.Input.GetAxis("Mouse X"), UnityEngine.Input.GetAxis("Mouse Y"));

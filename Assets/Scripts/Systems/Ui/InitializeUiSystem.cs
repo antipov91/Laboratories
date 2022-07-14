@@ -30,6 +30,9 @@ namespace Laboratories.Ui
 			var radialMenu = Object.Instantiate(config.radialMenu, canvas.transform);
 			uiEntity.ReplaceRadialMenu(radialMenu);
 			radialMenu.gameObject.SetActive(false);
+
+			var deviceSettingsMenu = Object.Instantiate(config.deviceSettingsMenu, canvas.transform);
+			uiEntity.ReplaceDeviceSettings(deviceSettingsMenu);
 		}
 
 		private void ContinueHandle()

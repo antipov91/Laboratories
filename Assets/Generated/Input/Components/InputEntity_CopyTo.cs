@@ -30,6 +30,10 @@ public partial class InputEntity
 		{
 			CopyReturnTo(Return);
 		}
+		else if (component is Laboratories.Components.Input.ZoomComponent Zoom)
+		{
+			CopyZoomTo(Zoom);
+		}
 		else if (component is Laboratories.Components.Input.RightStixComponent RightStix)
 		{
 			CopyRightStixTo(RightStix);

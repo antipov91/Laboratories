@@ -1,0 +1,352 @@
+fileFormatVersion: 2
+guid: 2b17be7671c5b8c47bc3baa126f54045
+ModelImporter:
+  serializedVersion: 20200
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Cubemap
+      assembly: UnityEngine.CoreModule
+      name: diffuse_cube
+    second: {fileID: 8900000, guid: 7a52b56a3c7dc63459584665198dc871, type: 3}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Armario_metal
+    second: {fileID: 2100000, guid: 3bf8f2a2f20d3ac4a9ae89c20be9a8f6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Armario_trasero
+    second: {fileID: 2100000, guid: 87e617a6977672447b7bb723c95dd7db, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lapiz
+    second: {fileID: 2100000, guid: 86f0dcf13dbc81042891d90c8dbd7c65, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mesa
+    second: {fileID: 2100000, guid: 1591c92b3b5145c469052642f8b726b2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mueble
+    second: {fileID: 2100000, guid: 53e219966fee2e24b9d56eccaa59def9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pared
+    second: {fileID: 2100000, guid: 11749ebdcde62994faab61c8b5e1bb6f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Paredes1
+    second: {fileID: 2100000, guid: 539b411b87d64eb4b838d8b5d081f43d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Piecesitas_de_la_pared
+    second: {fileID: 2100000, guid: 9ccec7913b1c68f4a97cdd3786d05875, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Piecita
+    second: {fileID: 2100000, guid: 375d8f733b4ca854b97fcd3392fd6a6d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Piso1
+    second: {fileID: 2100000, guid: 810bf121f6876ce4780ecfa49a6c5ebd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Powerplug
+    second: {fileID: 2100000, guid: c5b82d8984947254a95f0080cd456944, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pupitre_profe
+    second: {fileID: 2100000, guid: 60f4653259be16c439e4d2d1392de2a2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Silla
+    second: {fileID: 2100000, guid: 8ca570f96ce271c449f968f75a61f394, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tablero
+    second: {fileID: 2100000, guid: 3a413faa880486b4ca16c9ec4bb6b6f8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Techo
+    second: {fileID: 2100000, guid: f3ee567645b647740bc802ea58594738, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Ventanas1
+    second: {fileID: 2100000, guid: 3a98d3f3c0f5a83428cdee760dd76f69, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Vidiros
+    second: {fileID: 2100000, guid: 1ce5ad0ff0aba4f419f102c9920eacea, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Vidrio_puerta
+    second: {fileID: 2100000, guid: 54a56f51543d56a48a7e58b9451e1d03, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WallD
+    second: {fileID: 2100000, guid: 0f67db06e18f23d4d901a7fe6d7a9d93, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: borrador
+    second: {fileID: 2100000, guid: 2b8144ebd58ff19448576fb749f0e8dd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert1
+    second: {fileID: 2100000, guid: 4aec6f1d39900f644ad4f65b3be02bd2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert15
+    second: {fileID: 2100000, guid: 341da190a36cde44c916c23b955d7698, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert30
+    second: {fileID: 2100000, guid: ddecbde69e7d5554fb7a4995e141d6ae, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert31
+    second: {fileID: 2100000, guid: 156a65873f7909a4bbd9e5ccd62a3e7e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert33
+    second: {fileID: 2100000, guid: 4fb4ab5d3c9e7104a939a306fc27339f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: libros
+    second: {fileID: 2100000, guid: 4db52b6e0bf84c14ea95fc8feaba29f6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: puertas
+    second: {fileID: 2100000, guid: 7f18a64b853b8a44c9bb273ac8ca10a6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: reloj
+    second: {fileID: 2100000, guid: 79d98c1f6015cd041993ab542bb68c4a, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Armario de metal
+    second: {fileID: 2800000, guid: 0e6c3ef131ccd4642b008647d4a038cc, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Bolsa
+    second: {fileID: 2800000, guid: 787bea19fef089147acf07d589858fc4, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: "L\xE1mparas"
+    second: {fileID: 2800000, guid: fb04a60269e94d142a930960e722e026, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Mesa
+    second: {fileID: 2800000, guid: cc7c4d51ea6feb5498cf82806de5a775, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Piso Bake
+    second: {fileID: 2800000, guid: 62061fb6dff4e25449c48719ae7b0007, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: PowerPlug
+    second: {fileID: 2800000, guid: e8303b1b02903fb4291f7aa18dba925f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Puerta y ventana D
+    second: {fileID: 2800000, guid: b72dbbecb36d2a040be8141d05912bf1, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Silla
+    second: {fileID: 2800000, guid: 1026c8c14389eea4b97d635d8831a307, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Techo
+    second: {fileID: 2800000, guid: b967db96386220247b92393f519f166a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: bocina y reloj sin cristal
+    second: {fileID: 2800000, guid: e01a3c56c33b9bf49a010f4b51e0dbcb, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: cuaderno, lapiz y borrador
+    second: {fileID: 2800000, guid: 6da4cab6d5ea5284ea4b76c658a0711d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: cuaderno2
+    second: {fileID: 2800000, guid: 7fdb4e751b77a76438116d2d3ebaa43a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: dif bolsa
+    second: {fileID: 2800000, guid: a220cae65215afc4aba464ffa274b2eb, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: locker trasero
+    second: {fileID: 2800000, guid: 62737e9925fa67d4a8f13300b6f547a5, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: paredes bake
+    second: {fileID: 2800000, guid: 7fae52223a7066749b4c3e7860aae431, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: piecitas de la pared
+    second: {fileID: 2800000, guid: 4e435a98c32393a4aa2df17d2d0afbee, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: pizarrones y podio quizas
+    second: {fileID: 2800000, guid: cd9d4f6ee0ee17d4f99d22defb418021, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: pupitre profe
+    second: {fileID: 2800000, guid: f608f47ac233be34cab0e30c33d4ae21, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: reloj
+    second: {fileID: 2800000, guid: e4190a32a744d644480dcbc8d2b541b0, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: ventanas
+    second: {fileID: 2800000, guid: e3aee4037f4fae040886b6039af61a91, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: wall d
+    second: {fileID: 2800000, guid: d0a9c09ef5270f74791f656fc88f1b13, type: 3}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 10
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 0.099999994
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

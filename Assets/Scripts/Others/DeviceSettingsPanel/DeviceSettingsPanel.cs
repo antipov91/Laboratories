@@ -30,7 +30,7 @@ namespace Laboratories
 
         public void Invoke(Contexts contexts, GameEntity senderEntity)
         {
-            contexts.Meta.ManagerEntity.ReplaceGameState(GameState.Paused);
+            contexts.Meta.ManagerEntity.ReplaceGameState(GameState.Edited);
             this.contexts = contexts;
             this.gameEntity = senderEntity;
             gameObject.SetActive(true);

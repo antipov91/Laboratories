@@ -22,21 +22,21 @@ public partial class CircuitEntity
 		{
 			CopyTemporaryVoltageRSMTo(TemporaryVoltageRSM);
 		}
-		else if (component is Laboratories.Components.Circuit.ScopeSignalResultComponent ScopeSignalResult)
+		else if (component is Laboratories.Components.Circuit.TemporaryCurrentRSMComponent TemporaryCurrentRSM)
 		{
-			CopyScopeSignalResultTo(ScopeSignalResult);
+			CopyTemporaryCurrentRSMTo(TemporaryCurrentRSM);
 		}
 		else if (component is Laboratories.Components.Circuit.ScopeSignalComponent ScopeSignal)
 		{
 			CopyScopeSignalTo(ScopeSignal);
 		}
-		else if (component is Laboratories.Components.Circuit.TemporaryCurrentRSMComponent TemporaryCurrentRSM)
-		{
-			CopyTemporaryCurrentRSMTo(TemporaryCurrentRSM);
-		}
 		else if (component is Laboratories.Components.Circuit.CircuitSimulatorComponent CircuitSimulator)
 		{
 			IsCircuitSimulator = true;
+		}
+		else if (component is Laboratories.Components.Circuit.ScopeSignalResultComponent ScopeSignalResult)
+		{
+			CopyScopeSignalResultTo(ScopeSignalResult);
 		}
 		else if (component is Laboratories.Components.Circuit.CircuitComponent Circuit)
 		{

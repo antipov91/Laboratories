@@ -20,6 +20,7 @@ namespace Laboratories
         public PauseMenu pauseMenu;
         public RadialMenu radialMenu;
         public GroupDeviceSettingsPanel deviceSettingsMenu;
+        public ResearchGroupPanel researchGroupPanel;
 
         [Header("RadialMenu")]
         public float radialMenuRadius = 1f;

@@ -11,7 +11,7 @@ namespace Laboratories.Devices
         private SwitchSPST firstSwitch;
         private SwitchSPST secondSwitch;
 
-        public override void InitializeCircuit()
+        public override void Initialize()
         {
             firstSwitch = new SwitchSPST();
             secondSwitch = new SwitchSPST();
@@ -25,8 +25,6 @@ namespace Laboratories.Devices
 
         protected override void OnDeviceState(bool isActive)
         {
-            UnityEngine.Debug.Log(isActive);
-            
             firstSwitch.toggle(!isActive);
             secondSwitch.toggle(isActive);
 

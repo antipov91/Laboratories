@@ -8,7 +8,7 @@ namespace Laboratories.Devices
         [SerializeField] private float minValue = 0f;
         [SerializeField] private float maxValue = 220f;
 
-        public override void InitializeCircuit()
+        public override void Initialize()
         {
             var entity = deviceContext.Create(new Resistor(1000000), joints.Create("in"), joints.Create("out"));
             entity.ReplaceVoltageRSM(0f);

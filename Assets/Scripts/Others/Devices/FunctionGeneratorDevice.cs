@@ -53,7 +53,7 @@ namespace Laboratories.Devices
 
         private Voltage voltageSource;
 
-        public override void InitializeCircuit()
+        public override void Initialize()
         {
             voltageSource = new Voltage(SharpCircuit.Voltage.WaveType.AC);
 

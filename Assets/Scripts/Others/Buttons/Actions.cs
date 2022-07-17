@@ -7,6 +7,7 @@ namespace Laboratories
         RemoveWire,
         Edit,
         TurnOn,
-        TurnOff
+        TurnOff,
+        Research
     }
 }

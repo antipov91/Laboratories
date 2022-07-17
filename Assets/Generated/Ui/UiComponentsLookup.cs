@@ -18,8 +18,9 @@ public static class UiComponentsLookup
 	public const int Manager = 2;
 	public const int PauseMenu = 3;
 	public const int RadialMenu = 4;
+	public const int Researches = 5;
 
-	public const int TotalComponents = 5;
+	public const int TotalComponents = 6;
 
 	public static readonly string[] ComponentNames =
 	{
@@ -27,7 +28,8 @@ public static class UiComponentsLookup
 		"InvokeRadialMenuCommand",
 		"Manager",
 		"PauseMenu",
-		"RadialMenu"
+		"RadialMenu",
+		"Researches"
 	};
 
 	public static readonly System.Type[] ComponentTypes =
@@ -36,7 +38,8 @@ public static class UiComponentsLookup
 		typeof(Laboratories.Components.Ui.InvokeRadialMenuCommandComponent),
 		typeof(Laboratories.Components.Ui.ManagerComponent),
 		typeof(Laboratories.Components.Ui.PauseMenuComponent),
-		typeof(Laboratories.Components.Ui.RadialMenuComponent)
+		typeof(Laboratories.Components.Ui.RadialMenuComponent),
+		typeof(Laboratories.Components.Ui.ResearchesComponent)
 	};
 
 	public static readonly Dictionary<Type, int> ComponentTypeToIndex = new Dictionary<Type, int>
@@ -45,7 +48,8 @@ public static class UiComponentsLookup
 		{ typeof(Laboratories.Components.Ui.InvokeRadialMenuCommandComponent), 1 },
 		{ typeof(Laboratories.Components.Ui.ManagerComponent), 2 },
 		{ typeof(Laboratories.Components.Ui.PauseMenuComponent), 3 },
-		{ typeof(Laboratories.Components.Ui.RadialMenuComponent), 4 }
+		{ typeof(Laboratories.Components.Ui.RadialMenuComponent), 4 },
+		{ typeof(Laboratories.Components.Ui.ResearchesComponent), 5 }
 	};
 
 	/// <summary>

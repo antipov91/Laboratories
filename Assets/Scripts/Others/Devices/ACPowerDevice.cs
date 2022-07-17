@@ -34,7 +34,7 @@ namespace Laboratories.Devices
         private ACVoltageSource voltageSource;
         private SwitchSPST switchSPST;
 
-        public override void InitializeCircuit()
+        public override void Initialize()
         {
             voltageSource = new ACVoltageSource();
             voltageSource.rsmVoltage = initVoltage;

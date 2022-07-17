@@ -34,17 +34,17 @@ namespace Laboratories
         private DCVoltageSource voltageSource;
         private SwitchSPST switchSPST;
 
-        public override void InitializeCircuit()
+        public override void Initialize()
         {
             voltageSource = new DCVoltageSource();
             voltageSource.maxVoltage = initVoltage;
 
             switchSPST = new SwitchSPST();
 
-            deviceContext.Create(voltageSource, joints.Create("in"), joints.Create("out"));
-            /*deviceContext.Create(voltageSource, joints.Create("in"), joints.Create("middleIn"));
+            //deviceContext.Create(voltageSource, joints.Create("in"), joints.Create("out"));
+            deviceContext.Create(voltageSource, joints.Create("in"), joints.Create("middleIn"));
             deviceContext.Create(switchSPST, joints["middleIn"], joints.Create("middleOut"));
-            deviceContext.Create(new Resistor(resistance), joints["middleOut"], joints.Create("out"));*/
+            deviceContext.Create(new Resistor(resistance), joints["middleOut"], joints.Create("out"));
         }
 
         protected override void OnDeviceState(bool isActive)

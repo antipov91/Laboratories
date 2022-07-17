@@ -149,7 +149,7 @@ namespace SharpCircuit {
 			switch(waveform) {
 				case WaveType.DC:       return maxVoltage + bias;
 				case WaveType.AC:       return Math.Sin(w) * maxVoltage + bias;
-				case WaveType.SQUARE:   return bias + ((w % (2 * pi) > (2 * pi * _dutyCycle)) ? -maxVoltage : maxVoltage);
+				case WaveType.SQUARE:   return bias + ((w % (2 * pi) > (2 * pi * _dutyCycle)) ? 0.0 : maxVoltage);
 				case WaveType.TRIANGLE: return bias + triangleFunc(w % (2 * pi)) * maxVoltage;
 				case WaveType.SAWTOOTH: return bias + (w % (2 * pi)) * (maxVoltage / pi) - maxVoltage;
 				case WaveType.PULSE:    return ((w % (2 * pi)) < 1) ? maxVoltage + bias : bias;

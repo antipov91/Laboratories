@@ -50,6 +50,11 @@ namespace Laboratories.Meta
                     Cursor.lockState = CursorLockMode.None;
                     Cursor.visible = true;
                     break;
+                case GameState.Edited:
+                    contexts.Ui.ManagerEntity.PauseMenu.instance.gameObject.SetActive(false);
+                    Cursor.lockState = CursorLockMode.None;
+                    Cursor.visible = true;
+                    break;
                 default:
                     throw new ArgumentOutOfRangeException();
             }

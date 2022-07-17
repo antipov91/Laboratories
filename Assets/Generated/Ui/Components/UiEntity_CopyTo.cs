@@ -34,6 +34,10 @@ public partial class UiEntity
 		{
 			IsManager = true;
 		}
+		else if (component is Laboratories.Components.Ui.ResearchesComponent Researches)
+		{
+			CopyResearchesTo(Researches);
+		}
 		else if (component is Laboratories.Components.Ui.InvokeRadialMenuCommandComponent InvokeRadialMenuCommand)
 		{
 			CopyInvokeRadialMenuCommandTo(InvokeRadialMenuCommand);

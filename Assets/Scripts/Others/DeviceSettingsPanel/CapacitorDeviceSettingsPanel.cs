@@ -22,8 +22,8 @@ namespace Laboratories
 
             var initValue = (float)(device.Capistance * 1e6);
 
-            slider.minValue = (float)(device.Capistance * 1e6);
-            slider.maxValue = (float)(device.Capistance * 1e6);
+            slider.minValue = (float)(device.MinCapistance * 1e6);
+            slider.maxValue = (float)(device.MaxCapistance * 1e6);
             slider.value = initValue;
 
             label.text = string.Format("{0:D} לךװ", (int)initValue);
@@ -34,7 +34,7 @@ namespace Laboratories
             var device = gameEntity.Device.instance as CapacitorDevice;
             device.Capistance = value / 1e6;
 
-            label.text = string.Format("{0:D} לךװ", (int)(value * 1e6));
+            label.text = string.Format("{0:D} לךװ", (int)(value));
         }
 
         protected override void OnClosed()

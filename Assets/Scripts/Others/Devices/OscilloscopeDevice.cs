@@ -33,10 +33,7 @@ namespace Laboratories.Devices
             plot.AutoScale = false;
             plot.Boundary = new Rect(0f, -0.5f, 1f, 1f);
             plot.GridStep = new Vector2(1f / countGridVerLines, 1f / countGridHorLines);
-        }
 
-        public override void InitializeCircuit()
-        {
             firstChannel = new OscilloscopeChannel(plot, Color.yellow);
             secondChannel = new OscilloscopeChannel(plot, Color.red);
 

@@ -20,7 +20,7 @@ namespace Laboratories.Devices
 
         private CapacitorElm capacitor;
 
-        public override void InitializeCircuit()
+        public override void Initialize()
         {
             capacitor = new CapacitorElm(initValue);
             deviceContext.Create(capacitor, joints.Create("in"), joints.Create("out"));

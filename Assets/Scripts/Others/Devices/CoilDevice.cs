@@ -20,10 +20,9 @@ namespace Laboratories.Devices
 
         private InductorElm inductorElm;
 
-        public override void InitializeCircuit()
+        public override void Initialize()
         {
             inductorElm = new InductorElm(initValue);
-            inductorElm.inductance = 0.0006;
             deviceContext.Create(inductorElm, joints.Create("in"), joints.Create("out"));
         }
     }

@@ -33,6 +33,9 @@ namespace Laboratories.Ui
 
 			var deviceSettingsMenu = Object.Instantiate(config.deviceSettingsMenu, canvas.transform);
 			uiEntity.ReplaceDeviceSettings(deviceSettingsMenu);
+
+			var researchesMenu = Object.Instantiate(config.researchGroupPanel, canvas.transform);
+			uiEntity.ReplaceResearches(researchesMenu);
 		}
 
 		private void ContinueHandle()

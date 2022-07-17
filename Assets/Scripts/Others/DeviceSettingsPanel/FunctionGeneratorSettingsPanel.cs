@@ -1,7 +1,5 @@
 using Laboratories.Devices;
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,7 +9,9 @@ namespace Laboratories
     {
         [SerializeField] private Button sinBtn;
         [SerializeField] private Button rectBtn;
+        [SerializeField] private Text maxVoltageLabel;
         [SerializeField] private Slider maxVoltageSlider;
+        [SerializeField] private Text frequencyLabel;
         [SerializeField] private Slider frequencySlider;
 
         public override bool CheckCondition(Contexts contexts, GameEntity senderEntity)
@@ -47,6 +47,9 @@ namespace Laboratories
             else
                 throw new ArgumentException();
 
+            frequencyLabel.text = String.Format("{0:F2}", initFrequency);
+            maxVoltageLabel.text = String.Format("{0:F2}", initVoltage);
+
             sinBtn.onClick.AddListener(SinClick);
             rectBtn.onClick.AddListener(RectClick);
             maxVoltageSlider.onValueChanged.AddListener(MaxVoltageHandle);
@@ -56,12 +59,16 @@ namespace Laboratories
         private void FrequencyHandle(float value)
         {
             var device = gameEntity.Device.instance as FunctionGeneratorDevice;
+
+            frequencyLabel.text = String.Format("{0:F2}", value);
             device.Frequency = value;
         }
 
         private void MaxVoltageHandle(float value)
         {
             var device = gameEntity.Device.instance as FunctionGeneratorDevice;
+
+            maxVoltageLabel.text = String.Format("{0:F2}", value);
             device.Voltage = value;
         }
 
@@ -69,12 +76,18 @@ namespace Laboratories
         {
             var device = gameEntity.Device.instance as FunctionGeneratorDevice;
             device.Waveform = SharpCircuit.Voltage.WaveType.AC;
+
+            sinBtn.interactable = false;
+            rectBtn.interactable = true;
         }
 
         private void RectClick()
         {
             var device = gameEntity.Device.instance as FunctionGeneratorDevice;
             device.Waveform = SharpCircuit.Voltage.WaveType.SQUARE;
+
+            sinBtn.interactable = true;
+            rectBtn.interactable = false;
         }
 
         protected override void OnClosed()

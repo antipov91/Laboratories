@@ -23,6 +23,8 @@ MonoBehaviour:
     type: 3}
   deviceSettingsMenu: {fileID: 7535515113920988291, guid: 9c05ace181fc2ed4082b3c28f9afabc6,
     type: 3}
+  researchGroupPanel: {fileID: 5423261173027647970, guid: 3d327741bfddafd448867a6de3ae4a5c,
+    type: 3}
   radialMenuRadius: 125
   radialMenuAppearDuration: 0.2
   rsmFramesCount: 150

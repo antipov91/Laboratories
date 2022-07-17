@@ -3274,7 +3274,7 @@ GameObject:
   - component: {fileID: 451447858}
   - component: {fileID: 451447863}
   m_Layer: 0
-  m_Name: Coil_Device_2
+  m_Name: CoilPanelDevice
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3336,7 +3336,7 @@ MonoBehaviour:
     00000000:
       type: {class: PossibleActionsComponent, ns: Laboratories.Game, asm: Assembly-CSharp}
       data:
-        values: 00000000
+        values: 000000000300000006000000
     00000001:
       type: {class: PlacementsComponent, ns: Laboratories.Components.Game, asm: Assembly-CSharp}
       data:
@@ -3460,12 +3460,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 451447856}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af4c19cfff1cefc43aff5aa2768fe21d, type: 3}
+  m_Script: {fileID: 11500000, guid: e20d67bbc853f6f45a8592d9d0460abf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initValue: 0.00005
-  minValue: 0.000005
-  maxValue: 5
+  initValue: 0.001
+  minValue: 0.00001
+  maxValue: 3
+  initLength: 20
+  minLength: 10
+  maxLength: 30
+  initRadius: 10
+  minRadius: 5
+  maxRadius: 15
+  initCount: 20
+  minCount: 10
+  maxCount: 30
 --- !u!1 &452508706
 GameObject:
   m_ObjectHideFlags: 0
@@ -4660,8 +4669,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6407f820ecbfeb4294e57ad59d03c16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initValue: 0.000005
-  minValue: 0.00005
+  initValue: 0.00005
+  minValue: 0.000005
   maxValue: 0.001
 --- !u!114 &545515216
 MonoBehaviour:
@@ -11019,7 +11028,7 @@ MonoBehaviour:
       type: {class: SocketComponent, ns: Laboratories.Components.Game, asm: Assembly-CSharp}
       data:
         connectPivot: {fileID: 903968008}
-        ownerDeviceName: Coil_Device_2
+        ownerDeviceName: CoilPanelDevice
         id: out
     00000001:
       type: {class: PossibleActionsComponent, ns: Laboratories.Game, asm: Assembly-CSharp}
@@ -15450,7 +15459,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1495236310
 GameObject:
@@ -15522,7 +15531,7 @@ MonoBehaviour:
       type: {class: SocketComponent, ns: Laboratories.Components.Game, asm: Assembly-CSharp}
       data:
         connectPivot: {fileID: 1832654910}
-        ownerDeviceName: Coil_Device_2
+        ownerDeviceName: CoilPanelDevice
         id: in
     00000001:
       type: {class: PossibleActionsComponent, ns: Laboratories.Game, asm: Assembly-CSharp}
@@ -17494,8 +17503,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6407f820ecbfeb4294e57ad59d03c16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initValue: 0.000005
-  minValue: 0.00005
+  initValue: 0.00005
+  minValue: 0.000005
   maxValue: 0.001
 --- !u!114 &1611630808
 MonoBehaviour:
@@ -21919,8 +21928,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6407f820ecbfeb4294e57ad59d03c16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initValue: 0.000005
-  minValue: 0.00005
+  initValue: 0.00005
+  minValue: 0.000005
   maxValue: 0.001
 --- !u!114 &2076141554
 MonoBehaviour:
@@ -24308,7 +24317,7 @@ Transform:
   - {fileID: 1912473643}
   - {fileID: 1868185664}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &543450653715769647
 Transform:
@@ -30533,20 +30542,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7004864681127926410}
   m_Mesh: {fileID: 9111824614037293996, guid: 2b17be7671c5b8c47bc3baa126f54045, type: 3}
---- !u!4 &3536709666445868340
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4206144454232532878}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.557, y: 2.206, z: 1.857}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &3538395533871744856
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -32032,22 +32027,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!1 &4206144454232532878
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3536709666445868340}
-  m_Layer: 0
-  m_Name: SPDT
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &4212474813684418971
 GameObject:
   m_ObjectHideFlags: 0

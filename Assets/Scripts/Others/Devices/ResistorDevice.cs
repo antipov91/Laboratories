@@ -20,7 +20,7 @@ namespace Laboratories.Devices
 
         private Resistor resistor;
 
-        public override void InitializeCircuit()
+        public override void Initialize()
         {
             resistor = new Resistor(initValue);
             deviceContext.Create(resistor, joints.Create("in"), joints.Create("out"));

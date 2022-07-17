@@ -20,7 +20,6 @@ namespace Laboratories.Devices
             joints = new JointsCollection();
             deviceContext = new DeviceContext(contexts, contexts.Circuit.CircuitSimulatorEntity.Circuit.instance);
             Initialize();
-            InitializeCircuit();
             OnDeviceState(false);
 
             isInitialized = true;
@@ -29,8 +28,7 @@ namespace Laboratories.Devices
                 entity.AddDeviceActiveAddedListener(this);
         }
 
-        public virtual void Initialize() { }
-        public abstract void InitializeCircuit();
+        public abstract void Initialize();
         public void Process() 
         {
             if (isInitialized == false)

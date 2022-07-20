@@ -37,12 +37,12 @@ namespace Laboratories.Game
 								if (highlightEntity.Highlight.value)
 									highlightEntity.ReplaceHighlight(false);
 
-							gameEntity.ReplaceHighlight(true);								
+							gameEntity.ReplaceHighlight(true);
 						}
 						isFoundedHighlight = true;
 
 						if (contexts.Input.ManagerEntity.Action.isDown)
-							gameEntity.IsClicked = true;
+							gameEntity.IsClicked = true;	
 					}
 				}
 			}

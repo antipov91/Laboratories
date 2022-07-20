@@ -11,12 +11,12 @@ namespace SharpCircuit {
 		public Circuit.Lead leadOut { get { return lead0; } }
 
 		/// <summary>
-		/// Carrier Frequency (Hz)
+		/// Carrier WaveLength (Hz)
 		/// </summary>
 		public double carrierfreq { get; set; }
 
 		/// <summary>
-		/// Signal Frequency (Hz)
+		/// Signal WaveLength (Hz)
 		/// </summary>
 		public double signalfreq { get; set; }
 

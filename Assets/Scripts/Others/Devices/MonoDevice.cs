@@ -43,6 +43,7 @@ namespace Laboratories.Devices
         protected virtual void OnProcess() { }
 
         protected virtual void OnDeviceState(bool isActive) { }
+        protected virtual void OnRelease() { }
 
         public void Release()
         {
@@ -50,6 +51,8 @@ namespace Laboratories.Devices
 
             if (entity.HasDeviceActive)
                 entity.RemoveDeviceActiveAddedListener(this);
+
+            OnRelease();
         }
 
         public IJointsCollection GetJoints()

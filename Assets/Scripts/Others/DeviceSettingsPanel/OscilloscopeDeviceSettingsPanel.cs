@@ -55,6 +55,7 @@ namespace Laboratories
 
             timeScaleLabel.text = strPeriods[(int)timeScaleSlider.value];
             valueScaleCh1Label.text = strVoltsDiv[(int)valueScaleCh1Slider.value];
+            valueScaleCh2Label.text = strVoltsDiv[(int)valueScaleCh2Slider.value];
             timeOffsetLabel.text = string.Format("{0:F2}", 0f);
             valueOffsetLabel.text = string.Format("{0:F2}", 0f);
         }

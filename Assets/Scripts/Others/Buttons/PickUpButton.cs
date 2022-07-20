@@ -17,6 +17,9 @@ namespace Laboratories
         {
             senderEntity.IsPickuped = true;
 
+            if (senderEntity.HasActivePlacement)
+                senderEntity.ReplaceActivePlacement(false);
+
             var colliders = LaboratoriesTools.GetAllComponents<Collider>(senderEntity.Transform.instance.gameObject);
             foreach (var collider in colliders)
                 collider.enabled = false;

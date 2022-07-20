@@ -8,7 +8,8 @@ namespace Laboratories
         {
             return senderEntity.HasDevice &&
                    senderEntity.PossibleActions.values.Contains(Actions.Edit) &&
-                   (senderEntity.HasDeviceActive == false || (senderEntity.HasDeviceActive && senderEntity.DeviceActive.value));
+                   (senderEntity.HasDeviceActive == false || (senderEntity.HasDeviceActive && senderEntity.DeviceActive.value)) &&
+                   (senderEntity.HasActivePlacement == false || (senderEntity.HasActivePlacement && senderEntity.ActivePlacement.value));
         }
 
         protected override void Click(Contexts contexts, GameEntity senderEntity)

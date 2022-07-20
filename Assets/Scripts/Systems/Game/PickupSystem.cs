@@ -22,7 +22,7 @@ namespace Laboratories.Game
 
 				entity.Transform.instance.position = UnityEngine.Vector3.MoveTowards(entity.Transform.instance.position, playerEntity.Hand.instance.position, 10f * deltaTime);
 				entity.Transform.instance.rotation = UnityEngine.Quaternion.Lerp(entity.Transform.instance.rotation, playerEntity.Hand.instance.rotation, 10f * deltaTime);
-            }
+			}
 		}
 	}
 }

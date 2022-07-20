@@ -32,7 +32,7 @@ namespace SharpCircuit {
 		}
 
 		/// <summary>
-		/// Frequency (Hz)
+		/// WaveLength (Hz)
 		/// </summary>
 		public double frequency { get; set; }
 
@@ -194,13 +194,13 @@ namespace SharpCircuit {
 			arr[1] = "I = " + getCurrentText(current);
 			arr[2] = ((this is RailElm) ? "V = " : "Vd = ") + getVoltageText(getVoltageDiff());
 			if(waveform != WaveType.DC && waveform != WaveType.VAR) {
-				arr[3] = "f = " + getUnitText(frequency, "Hz");
+				arr[3] = "f = " + getUnitText(waveLength, "Hz");
 				arr[4] = "Vmax = " + getVoltageText(maxVoltage);
 				int i = 5;
 				if(bias != 0) {
 					arr[i++] = "Voff = " + getVoltageText(bias);
-				} else if(frequency > 500) {
-					arr[i++] = "wavelength = " + getUnitText(2.9979e8 / frequency, "m");
+				} else if(waveLength > 500) {
+					arr[i++] = "wavelength = " + getUnitText(2.9979e8 / waveLength, "m");
 				}
 				arr[i++] = "P = " + getUnitText(getPower(), "W");
 			}

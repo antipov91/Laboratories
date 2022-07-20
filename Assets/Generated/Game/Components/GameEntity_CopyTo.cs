@@ -18,7 +18,11 @@ public partial class GameEntity
 	public void CopyComponentTo(IComponent component)
 	{
 		#if !ENTITAS_REDUX_NO_IMPL
-		if (component is Laboratories.Components.Game.IdComponent Id)
+		if (component is Laboratories.Components.Game.ActivePlacementComponent ActivePlacement)
+		{
+			CopyActivePlacementTo(ActivePlacement);
+		}
+		else if (component is Laboratories.Components.Game.IdComponent Id)
 		{
 			CopyIdTo(Id);
 		}
@@ -121,6 +125,10 @@ public partial class GameEntity
 		else if (component is Laboratories.Game.PossibleActionsComponent PossibleActions)
 		{
 			CopyPossibleActionsTo(PossibleActions);
+		}
+		else if (component is ActivePlacementAddedListenerComponent ActivePlacementAddedListener)
+		{
+			CopyActivePlacementAddedListenerTo(ActivePlacementAddedListener);
 		}
 		else if (component is DeviceActiveAddedListenerComponent DeviceActiveAddedListener)
 		{

@@ -16,7 +16,7 @@ public class GridSystem : MonoBehaviour, IPointerClickHandler
 
     private void Awake()
     {
-        label.text = string.Format("({0:F1} : {1:F1})", 0f, 0f);
+        label.text = string.Format("({0:F2} : {1:F2})", 0f, 0f);
     }
 
     public void OnPointerClick(PointerEventData eventData)
@@ -34,7 +34,7 @@ public class GridSystem : MonoBehaviour, IPointerClickHandler
 
             if (CheckClickCondition(cPoint))
             {
-                label.text = string.Format("({0:F1} : {1:F1})", cPoint.x, cPoint.y);
+                label.text = string.Format("({0:F2} : {1:F2})", cPoint.x, cPoint.y);
                 OnClick?.Invoke(cPoint);
             }
         }
@@ -50,7 +50,7 @@ public class GridSystem : MonoBehaviour, IPointerClickHandler
 
             if (CheckClickCondition(cPoint))
             {
-                label.text = string.Format("({0:F1} : {1:F1})", cPoint.x, cPoint.y);
+                label.text = string.Format("({0:F2} : {1:F2})", cPoint.x, cPoint.y);
                 OnClick?.Invoke(cPoint);
             }
         }

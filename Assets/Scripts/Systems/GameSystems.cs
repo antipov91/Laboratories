@@ -30,7 +30,10 @@ namespace Laboratories.Game
             Add(new GameEventSystems(contexts));
             Add(new InitializeEntitiesInSceneSystem(contexts));
             Add(new InitializeEntitySystem(contexts));
+            Add(new InitializeSocketsSystem(contexts));
 
+            Add(new ShowMarkerPlacementSystem(contexts));
+            Add(new HideMarkerPlacementSystem(contexts));
             Add(new MovementPlayerSystem(contexts));
             Add(new MovementEffectsSystem(contexts));
             Add(new RotationPlayerSystem(contexts));
@@ -46,6 +49,7 @@ namespace Laboratories.Game
             Add(new ReleaseDeviceSystem(contexts));
 
             Add(new DestroySystem(contexts));
+            Add(new SceneCleanupSystem(contexts));
         }
 
         private void AddPausedSystems(Contexts contexts)

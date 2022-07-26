@@ -18,9 +18,13 @@ public partial class GameEntity
 	public void CopyComponentTo(IComponent component)
 	{
 		#if !ENTITAS_REDUX_NO_IMPL
-		if (component is Laboratories.Components.Game.ActivePlacementComponent ActivePlacement)
+		if (component is Laboratories.Components.Game.BlokeableSocketsComponent BlokeableSockets)
 		{
-			CopyActivePlacementTo(ActivePlacement);
+			CopyBlokeableSocketsTo(BlokeableSockets);
+		}
+		else if (component is Laboratories.Components.Game.HighlighBlockedComponent HighlighBlocked)
+		{
+			IsHighlighBlocked = true;
 		}
 		else if (component is Laboratories.Components.Game.IdComponent Id)
 		{
@@ -66,9 +70,17 @@ public partial class GameEntity
 		{
 			CopyDeviceTo(Device);
 		}
+		else if (component is Laboratories.Components.Game.ActivePlacementComponent ActivePlacement)
+		{
+			CopyActivePlacementTo(ActivePlacement);
+		}
 		else if (component is Laboratories.Components.Game.HighlightComponent Highlight)
 		{
 			CopyHighlightTo(Highlight);
+		}
+		else if (component is Laboratories.Components.Game.DeviceNameComponent DeviceName)
+		{
+			CopyDeviceNameTo(DeviceName);
 		}
 		else if (component is Laboratories.Components.Game.PlacementsComponent Placements)
 		{
@@ -81,6 +93,10 @@ public partial class GameEntity
 		else if (component is Laboratories.Components.Game.InitializeWireComponent InitializeWire)
 		{
 			CopyInitializeWireTo(InitializeWire);
+		}
+		else if (component is Laboratories.Components.Game.MarkerPlacementComponent MarkerPlacement)
+		{
+			IsMarkerPlacement = true;
 		}
 		else if (component is Laboratories.Components.Game.CameraMovementFXComponent CameraMovementFX)
 		{
@@ -126,13 +142,13 @@ public partial class GameEntity
 		{
 			CopyPossibleActionsTo(PossibleActions);
 		}
-		else if (component is ActivePlacementAddedListenerComponent ActivePlacementAddedListener)
-		{
-			CopyActivePlacementAddedListenerTo(ActivePlacementAddedListener);
-		}
 		else if (component is DeviceActiveAddedListenerComponent DeviceActiveAddedListener)
 		{
 			CopyDeviceActiveAddedListenerTo(DeviceActiveAddedListener);
+		}
+		else if (component is ActivePlacementAddedListenerComponent ActivePlacementAddedListener)
+		{
+			CopyActivePlacementAddedListenerTo(ActivePlacementAddedListener);
 		}
 		else if (component is HighlightAddedListenerComponent HighlightAddedListener)
 		{

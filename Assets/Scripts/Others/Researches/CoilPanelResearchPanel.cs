@@ -106,7 +106,6 @@ namespace Laboratories
 
         protected override void OnClosed()
         {
-            Debug.Log("Hide");
             foreach (var coil in coils)
                 Destroy(coil.gameObject);
 

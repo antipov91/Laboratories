@@ -21,10 +21,14 @@ namespace Laboratories
         public RadialMenu radialMenu;
         public GroupDeviceSettingsPanel deviceSettingsMenu;
         public ResearchGroupPanel researchGroupPanel;
+        public NameInfoPanel nameInfoPanel;
 
         [Header("RadialMenu")]
         public float radialMenuRadius = 1f;
         public float radialMenuAppearDuration = 0.2f;
+
+        [Header("Prefabs")]
+        public MarkerPlacement markerPlacement;
 
         [Header("Circuit")]
         public int rsmFramesCount = 150;

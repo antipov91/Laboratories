@@ -16,17 +16,19 @@ public static class UiComponentsLookup
 	public const int DeviceSettings = 0;
 	public const int InvokeRadialMenuCommand = 1;
 	public const int Manager = 2;
-	public const int PauseMenu = 3;
-	public const int RadialMenu = 4;
-	public const int Researches = 5;
+	public const int NameInfoPanel = 3;
+	public const int PauseMenu = 4;
+	public const int RadialMenu = 5;
+	public const int Researches = 6;
 
-	public const int TotalComponents = 6;
+	public const int TotalComponents = 7;
 
 	public static readonly string[] ComponentNames =
 	{
 		"DeviceSettings",
 		"InvokeRadialMenuCommand",
 		"Manager",
+		"NameInfoPanel",
 		"PauseMenu",
 		"RadialMenu",
 		"Researches"
@@ -37,6 +39,7 @@ public static class UiComponentsLookup
 		typeof(Laboratories.Components.Ui.DeviceSettingsComponent),
 		typeof(Laboratories.Components.Ui.InvokeRadialMenuCommandComponent),
 		typeof(Laboratories.Components.Ui.ManagerComponent),
+		typeof(Laboratories.Components.Ui.NameInfoPanelComponent),
 		typeof(Laboratories.Components.Ui.PauseMenuComponent),
 		typeof(Laboratories.Components.Ui.RadialMenuComponent),
 		typeof(Laboratories.Components.Ui.ResearchesComponent)
@@ -47,9 +50,10 @@ public static class UiComponentsLookup
 		{ typeof(Laboratories.Components.Ui.DeviceSettingsComponent), 0 },
 		{ typeof(Laboratories.Components.Ui.InvokeRadialMenuCommandComponent), 1 },
 		{ typeof(Laboratories.Components.Ui.ManagerComponent), 2 },
-		{ typeof(Laboratories.Components.Ui.PauseMenuComponent), 3 },
-		{ typeof(Laboratories.Components.Ui.RadialMenuComponent), 4 },
-		{ typeof(Laboratories.Components.Ui.ResearchesComponent), 5 }
+		{ typeof(Laboratories.Components.Ui.NameInfoPanelComponent), 3 },
+		{ typeof(Laboratories.Components.Ui.PauseMenuComponent), 4 },
+		{ typeof(Laboratories.Components.Ui.RadialMenuComponent), 5 },
+		{ typeof(Laboratories.Components.Ui.ResearchesComponent), 6 }
 	};
 
 	/// <summary>

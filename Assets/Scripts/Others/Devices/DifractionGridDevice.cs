@@ -26,7 +26,7 @@ namespace Laboratories.Devices
         private double holeLength;
         public double HoleLength
         {
-            get { return HoleLength; }
+            get { return holeLength; }
             set
             {
                 if (holeLength == value)
@@ -80,13 +80,16 @@ namespace Laboratories.Devices
 
         private Texture2D texture;
 
+        private double[,] intensityGrid;
+
         public override void Initialize()
         {
             texture = new Texture2D(textureSize, textureSize, TextureFormat.RGBA32, false);
+            intensityGrid = new double[textureSize, textureSize];
 
             delta = initDelta;
             count = initCount;
-            HoleLength = holeLength;
+            HoleLength = initHoleLength;
 
             screenEntity = contexts.Game.GetEntityWithName(screenName);
             laserEntity = contexts.Game.GetEntityWithName(laserName);
@@ -141,7 +144,7 @@ namespace Laboratories.Devices
             laserEntity = contexts.Game.GetEntityWithName(laserName);
             var laserDevice = laserEntity.Device.instance as LaserDevice;
 
-
+            var maxValue = float.MinValue;
             if (laserEntity.DeviceActive.value == false || screenEntity.ActivePlacement.value == false)
             {
                 for (int x = 0; x < textureSize; x++)
@@ -150,21 +153,35 @@ namespace Laboratories.Devices
             }
             else
             {
-                var pixelSize = size / textureSize;
+                var len = 4 * textureSize;
+                var intensityLine = new float[len];
+                var step = size.x / len;
+                for (int i = 0; i < len; i++)
+                {
+                    var x = step * i - size.x / 2.0;
+                    intensityLine[i] = (float)GetIntensity(x, screenDevice.Distance, laserDevice.WaveLength);
+                }
+
+                Convolution(ref intensityLine, CreateGaussianKernel(25));
+                for (int i = 0; i < len; i++)
+                    if (intensityLine[i] > maxValue)
+                        maxValue = intensityLine[i];
+
                 for (int x = 0; x < textureSize; x++)
                 {
                     for (int y = 0; y < textureSize; y++)
                     {
-                        var position = new Vector2(pixelSize.x * x - size.x / 2f, pixelSize.y * y - size.y / 2f);
-                        var intensity = (float)(GetIntensity(position, screenDevice.Distance, laserDevice.WaveLength) / 4f) * GetFade(2f * position / size);
-
-                        texture.SetPixel(x, y, new Color(1f, 1f, 1f, intensity));
+                        intensityGrid[x, y] = intensityLine[4 * x] * Mathf.Lerp(1f, 0f, 0.1f * Mathf.Abs(y - textureSize / 2f));
+                        var color = laserDevice.GetColor();
+                        color.a = intensityLine[4 * x] * Mathf.Lerp(1f, 0f, 0.1f * Mathf.Abs(y - textureSize / 2f)) / maxValue;
+                        texture.SetPixel(x, y, color);
                     }
                 }
             }
 
             texture.Apply();
             screenDevice.SetTexture(texture);
+            screenDevice.SetScreenValue(intensityGrid);
         }
 
         public Texture2D GetTexture()
@@ -172,30 +189,75 @@ namespace Laboratories.Devices
             return texture;
         }
 
-        public double GetIntensity(Vector2 point, float dist, double wLength)
+        public double GetIntensity(double x, float dist, double wLength)
         {
-            var intensity = 0.0;
+            double intensity = 0.0;
 
-            var r = Math.Sqrt(point.x * point.x + point.y * point.y + dist * dist);
+            double r = Math.Sqrt(x * x + dist * dist);
 
-            var alpha = Math.PI * holeLength * (point.x / r) / wLength;
-            var beta = Math.PI * delta * (point.x / r) / wLength;
+            var isource = 1.0;
+            var alpha = (Math.PI / wLength) * holeLength * (x / r);
+            if (alpha != 0)
+                isource = Math.Pow(Math.Sin(alpha), 2) / Math.Pow(alpha, 2);
 
-            if (alpha == 0.0 && beta == 0.0)
-                intensity = count;
-            else if (alpha == 0.0)
-                intensity = Math.Pow(Math.Sin(count * beta) / beta, 2) * count;
-            else if (beta == 0.0)
-                intensity = Math.Pow(Math.Sin(alpha) / alpha, 2) * count;
-            else
-                intensity = Math.Pow(Math.Sin(alpha) / alpha, 2) * Math.Pow(Math.Sin(count * beta) / beta, 2);
+            double iinterference = count;
+            var beta = (Math.PI * delta / wLength) * (x / r);
+            if (Math.Sin(beta) != 0)
+                iinterference = Math.Pow(Math.Sin(count * beta), 2) / Math.Pow(Math.Sin(beta), 2);
 
-            return Math.Sqrt(intensity);
+            intensity = isource * iinterference;
+            return intensity;
         }
 
-        private float GetFade(Vector2 point)
+        public static void Convolution(ref float[] matrix, float[] kernel)
         {
-            return 1f;
+            int radius = kernel.Length / 2;
+            int width = matrix.GetLength(0);
+            float res = 0f;
+            int index = 0;
+
+            for (int x = 0; x < width; x++)
+            {
+                res = 0f;
+                for (int i = 0; i < kernel.Length; i++)
+                {
+                    index = PadsIndex(x + i - radius, width);
+                    res += matrix[index] * kernel[i];
+                }
+                matrix[x] = res;
+            }
+        }
+
+        public static float[] CreateGaussianKernel(int radius)
+        {
+            int size = 2 * radius;
+            float deviation = radius / 4f;
+            var kernel = new float[size];
+            for (int i = 0; i < size; i++)
+                kernel[i] = 1f / (Mathf.Sqrt(2f * Mathf.PI) * deviation) * Mathf.Exp(-(i - radius) * (i - radius) / (2f * deviation * deviation));
+
+            NormalizeMatrix(ref kernel);
+            return kernel;
+        }
+
+        public static void NormalizeMatrix(ref float[] array)
+        {
+            float sum = 0;
+            for (int i = 0; i < array.Length; i++)
+                sum += array[i];
+
+            for (int i = 0; i < array.Length; i++)
+                array[i] /= sum;
+        }
+
+        public static int PadsIndex(int index, int maxIndex)
+        {
+            if (index < 0)
+                return 0;
+            else if (index >= maxIndex)
+                return maxIndex - 1;
+
+            return index;
         }
     }
 }

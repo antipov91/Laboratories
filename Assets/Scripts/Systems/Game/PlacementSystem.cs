@@ -40,6 +40,17 @@ namespace Laboratories.Game
 
 						if (draggedEntity.HasActivePlacement)
 							draggedEntity.ReplaceActivePlacement(hit.collider.gameObject.CompareTag("ActivePlacement"));
+
+						if (draggedEntity.HasBlokeableSockets)
+                        {
+							var isBlocked = hit.collider.gameObject.CompareTag("BlockedSockets");
+							foreach (var socketName in draggedEntity.BlokeableSockets.values)
+                            {
+								var socketEntity = contexts.Game.GetEntityWithName(socketName);
+								socketEntity.IsHighlighBlocked = isBlocked;
+                            }
+
+						}
 					}
 				}
 			}

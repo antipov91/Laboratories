@@ -12,11 +12,16 @@ namespace Laboratories.Devices
 
         [Header("UI")]
         [SerializeField] private SpriteRenderer display;
-        [SerializeField] private TextMeshPro voltDivLabel;
+        [SerializeField] private TextMeshPro voltDivCh1Label;
+        [SerializeField] private TextMeshPro voltDivCh2Label;
         [SerializeField] private TextMeshPro timeDivLabel;
 
         [Header("Settings")]
         [SerializeField] private UnityPlot.Plot plot;
+
+        [Header("On/Off btn")]
+        [SerializeField] private GameObject onBtn;
+        [SerializeField] private GameObject offBtn;
 
         private CircuitEntity elmCircuit;
         private CircuitEntity secondElmCircuit;
@@ -24,7 +29,8 @@ namespace Laboratories.Devices
         private OscilloscopeChannel secondChannel;
         private OscilloscopeChannel firstChannel;
 
-        private string newVoltDiv;
+        private string newVoltDivCh1;
+        private string newVoltDivCh2;
         private string newTimeDiv;
         private float previouseTimeWindow = 16e-04f;
 
@@ -42,8 +48,10 @@ namespace Laboratories.Devices
 
             plot.Redraw();
 
-            voltDivLabel.text = "500 ìÂ";
-            newVoltDiv = "500 ìÂ";
+            voltDivCh1Label.text = "500 ìÂ";
+            voltDivCh2Label.text = "500 ìÂ";
+            newVoltDivCh1 = "500 ìÂ";
+            newVoltDivCh2 = "500 ìÂ";
             timeDivLabel.text = "80 ìêñ";
             newTimeDiv = "80 ìêñ";
 
@@ -84,9 +92,14 @@ namespace Laboratories.Devices
             secondElmCircuit.ScopeSignal.timeWindow = value;
         }
 
-        public void SetValueLabel(string text)
+        public void SetValueLabelCh1(string text)
         {
-            newVoltDiv = text;
+            newVoltDivCh1 = text;
+        }
+
+        public void SetValueLabelCh2(string text)
+        {
+            newVoltDivCh2 = text;
         }
 
         public void SetTimeLabel(string text)
@@ -119,6 +132,9 @@ namespace Laboratories.Devices
 
                 display.gameObject.SetActive(false);
             }
+
+            onBtn.gameObject.SetActive(isActive);
+            offBtn.gameObject.SetActive(!isActive);
         }
 
         protected override void OnProcess()
@@ -131,7 +147,8 @@ namespace Laboratories.Devices
                 if (secondElmCircuit.HasScopeSignalResult)
                     secondChannel.Update(secondElmCircuit.ScopeSignalResult.values);
 
-                voltDivLabel.text = newVoltDiv;
+                voltDivCh1Label.text = newVoltDivCh1;
+                voltDivCh2Label.text = newVoltDivCh2;
                 timeDivLabel.text = newTimeDiv;
             }
         }

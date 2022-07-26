@@ -16,6 +16,7 @@ namespace Laboratories.Game
 
 		public void Update()
 		{
+			contexts.Ui.ManagerEntity.NameInfoPanel.instance.Close();
 			if (contexts.Game.PlayerEntity.HasDraggableObject)
 				return;
 
@@ -29,7 +30,7 @@ namespace Laboratories.Game
 				if (hit.collider.gameObject.TryGetComponent<EntityLink>(out var entityLink))
 				{
 					var gameEntity = entityLink.Entity as GameEntity;
-					if (gameEntity != null && gameEntity.HasHighlight)
+					if (gameEntity != null && gameEntity.HasHighlight && gameEntity.IsHighlighBlocked == false)
 					{
 						if (gameEntity.Highlight.value == false)
 						{
@@ -42,7 +43,10 @@ namespace Laboratories.Game
 						isFoundedHighlight = true;
 
 						if (contexts.Input.ManagerEntity.Action.isDown)
-							gameEntity.IsClicked = true;	
+							gameEntity.IsClicked = true;
+
+						if (gameEntity.HasDeviceName)
+							contexts.Ui.ManagerEntity.NameInfoPanel.instance.Invoke(gameEntity.DeviceName.value);
 					}
 				}
 			}

@@ -17,34 +17,38 @@ public static class GameComponentsLookup
 	public const int DeviceActiveAddedListener = 1;
 	public const int HighlightAddedListener = 2;
 	public const int ActivePlacement = 3;
-	public const int Camera = 4;
-	public const int CameraMovementFX = 5;
-	public const int Clicked = 6;
-	public const int Connected = 7;
-	public const int ConnectedCount = 8;
-	public const int Destroyed = 9;
-	public const int DeviceActive = 10;
-	public const int Device = 11;
-	public const int DraggableObject = 12;
-	public const int Highlight = 13;
-	public const int Id = 14;
-	public const int InitializeWire = 15;
-	public const int Name = 16;
-	public const int Placements = 17;
-	public const int Player = 18;
-	public const int SelectedSocket = 19;
-	public const int SelectedWirePrefab = 20;
-	public const int Socket = 21;
-	public const int Speed = 22;
-	public const int Transform = 23;
-	public const int View = 24;
-	public const int CharacterController = 25;
-	public const int Hand = 26;
-	public const int InitializeGameObject = 27;
-	public const int Pickuped = 28;
-	public const int PossibleActions = 29;
+	public const int BlokeableSockets = 4;
+	public const int Camera = 5;
+	public const int CameraMovementFX = 6;
+	public const int Clicked = 7;
+	public const int Connected = 8;
+	public const int ConnectedCount = 9;
+	public const int Destroyed = 10;
+	public const int DeviceActive = 11;
+	public const int Device = 12;
+	public const int DeviceName = 13;
+	public const int DraggableObject = 14;
+	public const int HighlighBlocked = 15;
+	public const int Highlight = 16;
+	public const int Id = 17;
+	public const int InitializeWire = 18;
+	public const int MarkerPlacement = 19;
+	public const int Name = 20;
+	public const int Placements = 21;
+	public const int Player = 22;
+	public const int SelectedSocket = 23;
+	public const int SelectedWirePrefab = 24;
+	public const int Socket = 25;
+	public const int Speed = 26;
+	public const int Transform = 27;
+	public const int View = 28;
+	public const int CharacterController = 29;
+	public const int Hand = 30;
+	public const int InitializeGameObject = 31;
+	public const int Pickuped = 32;
+	public const int PossibleActions = 33;
 
-	public const int TotalComponents = 30;
+	public const int TotalComponents = 34;
 
 	public static readonly string[] ComponentNames =
 	{
@@ -52,6 +56,7 @@ public static class GameComponentsLookup
 		"DeviceActiveAddedListener",
 		"HighlightAddedListener",
 		"ActivePlacement",
+		"BlokeableSockets",
 		"Camera",
 		"CameraMovementFX",
 		"Clicked",
@@ -60,10 +65,13 @@ public static class GameComponentsLookup
 		"Destroyed",
 		"DeviceActive",
 		"Device",
+		"DeviceName",
 		"DraggableObject",
+		"HighlighBlocked",
 		"Highlight",
 		"Id",
 		"InitializeWire",
+		"MarkerPlacement",
 		"Name",
 		"Placements",
 		"Player",
@@ -86,6 +94,7 @@ public static class GameComponentsLookup
 		typeof(DeviceActiveAddedListenerComponent),
 		typeof(HighlightAddedListenerComponent),
 		typeof(Laboratories.Components.Game.ActivePlacementComponent),
+		typeof(Laboratories.Components.Game.BlokeableSocketsComponent),
 		typeof(Laboratories.Components.Game.CameraComponent),
 		typeof(Laboratories.Components.Game.CameraMovementFXComponent),
 		typeof(Laboratories.Components.Game.ClickedComponent),
@@ -94,10 +103,13 @@ public static class GameComponentsLookup
 		typeof(Laboratories.Components.Game.DestroyedComponent),
 		typeof(Laboratories.Components.Game.DeviceActiveComponent),
 		typeof(Laboratories.Components.Game.DeviceComponent),
+		typeof(Laboratories.Components.Game.DeviceNameComponent),
 		typeof(Laboratories.Components.Game.DraggableObjectComponent),
+		typeof(Laboratories.Components.Game.HighlighBlockedComponent),
 		typeof(Laboratories.Components.Game.HighlightComponent),
 		typeof(Laboratories.Components.Game.IdComponent),
 		typeof(Laboratories.Components.Game.InitializeWireComponent),
+		typeof(Laboratories.Components.Game.MarkerPlacementComponent),
 		typeof(Laboratories.Components.Game.NameComponent),
 		typeof(Laboratories.Components.Game.PlacementsComponent),
 		typeof(Laboratories.Components.Game.PlayerComponent),
@@ -120,32 +132,36 @@ public static class GameComponentsLookup
 		{ typeof(DeviceActiveAddedListenerComponent), 1 },
 		{ typeof(HighlightAddedListenerComponent), 2 },
 		{ typeof(Laboratories.Components.Game.ActivePlacementComponent), 3 },
-		{ typeof(Laboratories.Components.Game.CameraComponent), 4 },
-		{ typeof(Laboratories.Components.Game.CameraMovementFXComponent), 5 },
-		{ typeof(Laboratories.Components.Game.ClickedComponent), 6 },
-		{ typeof(Laboratories.Components.Game.ConnectedComponent), 7 },
-		{ typeof(Laboratories.Components.Game.ConnectedCountComponent), 8 },
-		{ typeof(Laboratories.Components.Game.DestroyedComponent), 9 },
-		{ typeof(Laboratories.Components.Game.DeviceActiveComponent), 10 },
-		{ typeof(Laboratories.Components.Game.DeviceComponent), 11 },
-		{ typeof(Laboratories.Components.Game.DraggableObjectComponent), 12 },
-		{ typeof(Laboratories.Components.Game.HighlightComponent), 13 },
-		{ typeof(Laboratories.Components.Game.IdComponent), 14 },
-		{ typeof(Laboratories.Components.Game.InitializeWireComponent), 15 },
-		{ typeof(Laboratories.Components.Game.NameComponent), 16 },
-		{ typeof(Laboratories.Components.Game.PlacementsComponent), 17 },
-		{ typeof(Laboratories.Components.Game.PlayerComponent), 18 },
-		{ typeof(Laboratories.Components.Game.SelectedSocketComponent), 19 },
-		{ typeof(Laboratories.Components.Game.SelectedWirePrefabComponent), 20 },
-		{ typeof(Laboratories.Components.Game.SocketComponent), 21 },
-		{ typeof(Laboratories.Components.Game.SpeedComponent), 22 },
-		{ typeof(Laboratories.Components.Game.TransformComponent), 23 },
-		{ typeof(Laboratories.Components.Game.ViewComponent), 24 },
-		{ typeof(Laboratories.Game.CharacterControllerComponent), 25 },
-		{ typeof(Laboratories.Game.HandComponent), 26 },
-		{ typeof(Laboratories.Game.InitializeGameObjectComponent), 27 },
-		{ typeof(Laboratories.Game.PickupedComponent), 28 },
-		{ typeof(Laboratories.Game.PossibleActionsComponent), 29 }
+		{ typeof(Laboratories.Components.Game.BlokeableSocketsComponent), 4 },
+		{ typeof(Laboratories.Components.Game.CameraComponent), 5 },
+		{ typeof(Laboratories.Components.Game.CameraMovementFXComponent), 6 },
+		{ typeof(Laboratories.Components.Game.ClickedComponent), 7 },
+		{ typeof(Laboratories.Components.Game.ConnectedComponent), 8 },
+		{ typeof(Laboratories.Components.Game.ConnectedCountComponent), 9 },
+		{ typeof(Laboratories.Components.Game.DestroyedComponent), 10 },
+		{ typeof(Laboratories.Components.Game.DeviceActiveComponent), 11 },
+		{ typeof(Laboratories.Components.Game.DeviceComponent), 12 },
+		{ typeof(Laboratories.Components.Game.DeviceNameComponent), 13 },
+		{ typeof(Laboratories.Components.Game.DraggableObjectComponent), 14 },
+		{ typeof(Laboratories.Components.Game.HighlighBlockedComponent), 15 },
+		{ typeof(Laboratories.Components.Game.HighlightComponent), 16 },
+		{ typeof(Laboratories.Components.Game.IdComponent), 17 },
+		{ typeof(Laboratories.Components.Game.InitializeWireComponent), 18 },
+		{ typeof(Laboratories.Components.Game.MarkerPlacementComponent), 19 },
+		{ typeof(Laboratories.Components.Game.NameComponent), 20 },
+		{ typeof(Laboratories.Components.Game.PlacementsComponent), 21 },
+		{ typeof(Laboratories.Components.Game.PlayerComponent), 22 },
+		{ typeof(Laboratories.Components.Game.SelectedSocketComponent), 23 },
+		{ typeof(Laboratories.Components.Game.SelectedWirePrefabComponent), 24 },
+		{ typeof(Laboratories.Components.Game.SocketComponent), 25 },
+		{ typeof(Laboratories.Components.Game.SpeedComponent), 26 },
+		{ typeof(Laboratories.Components.Game.TransformComponent), 27 },
+		{ typeof(Laboratories.Components.Game.ViewComponent), 28 },
+		{ typeof(Laboratories.Game.CharacterControllerComponent), 29 },
+		{ typeof(Laboratories.Game.HandComponent), 30 },
+		{ typeof(Laboratories.Game.InitializeGameObjectComponent), 31 },
+		{ typeof(Laboratories.Game.PickupedComponent), 32 },
+		{ typeof(Laboratories.Game.PossibleActionsComponent), 33 }
 	};
 
 	/// <summary>

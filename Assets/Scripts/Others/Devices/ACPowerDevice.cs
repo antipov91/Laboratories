@@ -31,6 +31,10 @@ namespace Laboratories.Devices
         [Header("Ui")]
         [SerializeField] private TextMeshPro label;
 
+        [Header("On/Off btn")]
+        [SerializeField] private GameObject onBtn;
+        [SerializeField] private GameObject offBtn;
+
         private ACVoltageSource voltageSource;
         private SwitchSPST switchSPST;
 
@@ -55,6 +59,8 @@ namespace Laboratories.Devices
                 switchSPST.toggleOff();
 
             label.text = isActive ? string.Format("{0:D}", (int)voltageSource.rsmVoltage) : "";
+            onBtn.gameObject.SetActive(isActive);
+            offBtn.gameObject.SetActive(!isActive);
         }
     }
 }

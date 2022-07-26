@@ -41,8 +41,6 @@ namespace Laboratories
                 .Add(new CircuitsSystems(contexts, initState))
                 .Add(new GameSystems(contexts, initState))
                 .Add(new UiSystems(contexts, initState));
-                
-                //.Add(new CleanupSystems(contexts));*/
         }
 
         private void Update()
@@ -73,12 +71,22 @@ namespace Laboratories
                     throw new ArgumentOutOfRangeException();
             }
             
-            /*if (Contexts.SharedInstance.Meta.ManagerEntity.HasQuit)
+            if (Contexts.SharedInstance.Meta.ManagerEntity.HasQuit)
             {
                 var action = Contexts.SharedInstance.Meta.ManagerEntity.Quit.onQuit;
-                systems.TearDown();
+
+                gameSystems.Deactivate();
+                focusedSystems.Deactivate();
+                pausedSystems.Deactivate();
+                editedSystems.Deactivate();
+
+                gameSystems.TearDown();
+                pausedSystems.TearDown();
+                focusedSystems.TearDown();
+                editedSystems.TearDown();
+
                 action?.Invoke();
-            }*/
+            }
         }
 
         private void FixedUpdate()

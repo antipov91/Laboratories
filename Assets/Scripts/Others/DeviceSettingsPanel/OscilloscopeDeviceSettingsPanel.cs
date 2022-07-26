@@ -114,7 +114,7 @@ namespace Laboratories
             device.SetValueScaleCh1(scale);
 
             valueScaleCh1Label.text = strVoltsDiv[(int)valueScaleCh1Slider.value];
-            device.SetValueLabel(strVoltsDiv[(int)valueScaleCh1Slider.value]);
+            device.SetValueLabelCh1(strVoltsDiv[(int)valueScaleCh1Slider.value]);
         }
 
         private void ValueScaleCh2Changed(float value)
@@ -125,7 +125,7 @@ namespace Laboratories
             device.SetValueScaleCh2(scale);
 
             valueScaleCh2Label.text = strVoltsDiv[(int)valueScaleCh2Slider.value];
-            device.SetValueLabel(strVoltsDiv[(int)valueScaleCh2Slider.value]);
+            device.SetValueLabelCh2(strVoltsDiv[(int)valueScaleCh2Slider.value]);
         }
 
         protected override void OnClosed()

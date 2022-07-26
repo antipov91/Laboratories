@@ -18,16 +18,31 @@ namespace Laboratories
 
         public override bool CheckCondition(Contexts contexts, GameEntity senderEntity)
         {
-            return senderEntity.Device.instance is CollectingLensDevice;
+            return senderEntity.Device.instance is ScatteringLensDevice;
         }
 
         protected override void OnInvoked()
         {
-            var device = gameEntity.Device.instance as CollectingLensDevice;
+            var device = gameEntity.Device.instance as ScatteringLensDevice;
 
-            distanceText.text = String.Format("{0:D}", (int)device.Distance);
-            firstRadiusText.text = String.Format("{0:D}", (int)device.FirstRadius);
-            secondRadiusText.text = String.Format("{0:D}", (int)device.SecondRadius);
+            distanceText.text = String.Format("{0:F2}", device.Distance);
+            firstRadiusText.text = String.Format("{0:F1}", device.FirstRadius * 1000f);
+            secondRadiusText.text = String.Format("{0:F1}", device.SecondRadius * 1000f);
+
+            var initDistance = device.Distance;
+            distanceSlider.minValue = device.MinDistance;
+            distanceSlider.maxValue = device.MaxDistance;
+            distanceSlider.value = initDistance;
+
+            var initFirstRadius = device.FirstRadius;
+            firstRadiusSlider.minValue = (float)device.MinFirstRadius;
+            firstRadiusSlider.maxValue = (float)device.MaxFirstRadius;
+            firstRadiusSlider.value = (float)initFirstRadius;
+
+            var initSecondRadius = device.SecondRadius;
+            secondRadiusSlider.minValue = (float)device.MinSecondRadius;
+            secondRadiusSlider.maxValue = (float)device.MaxSecondRadius;
+            secondRadiusSlider.value = (float)initSecondRadius;
 
             distanceSlider.onValueChanged.AddListener(DistanceChangedHandle);
             firstRadiusSlider.onValueChanged.AddListener(FirstRadiusChangedHandle);
@@ -36,27 +51,27 @@ namespace Laboratories
 
         private void DistanceChangedHandle(float value)
         {
-            var device = gameEntity.Device.instance as CollectingLensDevice;
+            var device = gameEntity.Device.instance as ScatteringLensDevice;
 
-            distanceText.text = String.Format("{0:D}", (int)device.Distance);
+            distanceText.text = String.Format("{0:F2}", device.Distance);
 
             device.Distance = value;
         }
 
         private void FirstRadiusChangedHandle(float value)
         {
-            var device = gameEntity.Device.instance as CollectingLensDevice;
+            var device = gameEntity.Device.instance as ScatteringLensDevice;
 
-            firstRadiusText.text = String.Format("{0:D}", (int)device.FirstRadius);
+            firstRadiusText.text = String.Format("{0:F1}", device.FirstRadius * 1000f);
 
             device.FirstRadius = value;
         }
 
         private void SecondRadiusChangedHandle(float value)
         {
-            var device = gameEntity.Device.instance as CollectingLensDevice;
+            var device = gameEntity.Device.instance as ScatteringLensDevice;
 
-            secondRadiusText.text = String.Format("{0:D}", (int)device.SecondRadius);
+            secondRadiusText.text = String.Format("{0:F1}", device.SecondRadius * 1000f);
 
             device.SecondRadius = value;
         }

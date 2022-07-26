@@ -26,6 +26,10 @@ public partial class UiEntity
 		{
 			CopyRadialMenuTo(RadialMenu);
 		}
+		else if (component is Laboratories.Components.Ui.NameInfoPanelComponent NameInfoPanel)
+		{
+			CopyNameInfoPanelTo(NameInfoPanel);
+		}
 		else if (component is Laboratories.Components.Ui.PauseMenuComponent PauseMenu)
 		{
 			CopyPauseMenuTo(PauseMenu);

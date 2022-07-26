@@ -18,8 +18,9 @@ public static class MetaComponentsLookup
 	public const int GameState = 2;
 	public const int Manager = 3;
 	public const int PreviouseGameState = 4;
+	public const int Quit = 5;
 
-	public const int TotalComponents = 5;
+	public const int TotalComponents = 6;
 
 	public static readonly string[] ComponentNames =
 	{
@@ -27,7 +28,8 @@ public static class MetaComponentsLookup
 		"GameConfig",
 		"GameState",
 		"Manager",
-		"PreviouseGameState"
+		"PreviouseGameState",
+		"Quit"
 	};
 
 	public static readonly System.Type[] ComponentTypes =
@@ -36,7 +38,8 @@ public static class MetaComponentsLookup
 		typeof(Laboratories.Components.Meta.GameConfigComponent),
 		typeof(Laboratories.Components.Meta.GameStateComponent),
 		typeof(Laboratories.Components.Meta.ManagerComponent),
-		typeof(Laboratories.Components.Meta.PreviouseGameStateComponent)
+		typeof(Laboratories.Components.Meta.PreviouseGameStateComponent),
+		typeof(Laboratories.Components.Meta.QuitComponent)
 	};
 
 	public static readonly Dictionary<Type, int> ComponentTypeToIndex = new Dictionary<Type, int>
@@ -45,7 +48,8 @@ public static class MetaComponentsLookup
 		{ typeof(Laboratories.Components.Meta.GameConfigComponent), 1 },
 		{ typeof(Laboratories.Components.Meta.GameStateComponent), 2 },
 		{ typeof(Laboratories.Components.Meta.ManagerComponent), 3 },
-		{ typeof(Laboratories.Components.Meta.PreviouseGameStateComponent), 4 }
+		{ typeof(Laboratories.Components.Meta.PreviouseGameStateComponent), 4 },
+		{ typeof(Laboratories.Components.Meta.QuitComponent), 5 }
 	};
 
 	/// <summary>

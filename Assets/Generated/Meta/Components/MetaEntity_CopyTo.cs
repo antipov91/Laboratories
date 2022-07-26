@@ -22,6 +22,10 @@ public partial class MetaEntity
 		{
 			CopyPreviouseGameStateTo(PreviouseGameState);
 		}
+		else if (component is Laboratories.Components.Meta.QuitComponent Quit)
+		{
+			CopyQuitTo(Quit);
+		}
 		else if (component is Laboratories.Components.Meta.GameConfigComponent GameConfig)
 		{
 			CopyGameConfigTo(GameConfig);

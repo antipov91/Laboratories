@@ -25,8 +25,12 @@ MonoBehaviour:
     type: 3}
   researchGroupPanel: {fileID: 5423261173027647970, guid: 3d327741bfddafd448867a6de3ae4a5c,
     type: 3}
+  nameInfoPanel: {fileID: 2066330688339543579, guid: 531424e9cfca28144b778f72398c3458,
+    type: 3}
   radialMenuRadius: 125
   radialMenuAppearDuration: 0.2
+  markerPlacement: {fileID: 3926987670768868124, guid: 65fb05702aff20845b6a6f98b8337575,
+    type: 3}
   rsmFramesCount: 150
   blueWirePrefab: {fileID: 592161599807417201, guid: c9900c48ded7c1141acc109e3555dc8e,
     type: 3}

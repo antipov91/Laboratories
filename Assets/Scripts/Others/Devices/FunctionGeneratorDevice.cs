@@ -51,6 +51,10 @@ namespace Laboratories.Devices
         [SerializeField] private TextMeshPro voltageLabel;
         [SerializeField] private TextMeshPro frequencyLabel;
 
+        [Header("On/Off btn")]
+        [SerializeField] private GameObject onBtn;
+        [SerializeField] private GameObject offBtn;
+
         private Voltage voltageSource;
 
         public override void Initialize()
@@ -73,6 +77,9 @@ namespace Laboratories.Devices
 
             voltageLabel.gameObject.SetActive(isActive);
             frequencyLabel.gameObject.SetActive(isActive);
+
+            onBtn.gameObject.SetActive(isActive);
+            offBtn.gameObject.SetActive(!isActive);
         }
     }
 }

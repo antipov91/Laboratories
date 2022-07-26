@@ -42,16 +42,19 @@ namespace Laboratories.Meta
                     break;
                 case GameState.Paused:
                     contexts.Ui.ManagerEntity.PauseMenu.instance.gameObject.SetActive(true);
+                    contexts.Ui.ManagerEntity.NameInfoPanel.instance.Close();
                     Cursor.lockState = CursorLockMode.None;
                     Cursor.visible = true;
                     break;
                 case GameState.Focused:
                     contexts.Ui.ManagerEntity.PauseMenu.instance.gameObject.SetActive(false);
+                    contexts.Ui.ManagerEntity.NameInfoPanel.instance.Close();
                     Cursor.lockState = CursorLockMode.None;
                     Cursor.visible = true;
                     break;
                 case GameState.Edited:
                     contexts.Ui.ManagerEntity.PauseMenu.instance.gameObject.SetActive(false);
+                    contexts.Ui.ManagerEntity.NameInfoPanel.instance.Close();
                     Cursor.lockState = CursorLockMode.None;
                     Cursor.visible = true;
                     break;
